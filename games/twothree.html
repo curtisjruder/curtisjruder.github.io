@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Welcome to 23!</h1>
+    <p>The objective of the game is not to pick up the last stick.</p>
+    <h2>Choose number of sticks to pick up:</h2>
+    <button id="b1" onclick="click1()">1</button>
+    <button id="b2" onclick="click2">2</button>
+    <button id="b3" onclick="click3">3</button>
+    <br />
+    <br />
+    <ul id="game">
+
+    </ul>
+
+    <script>
+        var countr = 23;
+        function click1(){
+            reportValue(1,"Player");
+            setTimeour(computerTurn(),3000);
+         }
+        function click2() {
+            if (!isValid(2)) {
+                alert("Nope... cannot pick-up more sticks than are left.  Take your loss friend and pick up that last one :-)");
+                return;
+            }
+            reportValue(2, "Me");
+            setTimeour(computerTurn(), 3000);
+        }
+        function click3() {
+            if (!isValid(3)) {
+                if (countr = 2)
+                    alert("Maybe, just maybe, you should just pick up one and win.  At the very least, you cannot pick up three when only two remain.")
+                else
+                    alert("Nope... cannot pick-up more sticks than are left.  Take your loss friend and pick up that last one :-)");
+                return;
+            }
+            reportValue(3, "Me");
+            if (complete())
+                return;
+            setTimeour(computerTurn(), 3000);
+        }
+        function isValid(value) {
+            return (value > countr);
+        }
+        function resetGame() {
+            if (countr == 0) {
+                countr = 23;
+
+            }
+         }
+
+        function reportValue(value, user){
+            countr -= value;
+
+        }
+        function computerTurn(){
+            reportValue(getComputerChoice(),"Computer")
+            
+        }
+        function getComputerChoice() {
+            switch (countr) {                
+                case 2: return 1;
+                case 3: return 2;
+                case 4: return 3;
+                case 5:
+                case 6: return 1;
+                case 7: return 2;
+                case 8: return 3;
+                default: return Math.round(Math.random()*2)+1;
+            }
+        }
+    </script>
+</body>
+</html>
