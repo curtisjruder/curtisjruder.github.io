@@ -55,7 +55,6 @@
          }
 
         function reportValue(value, user){
-            console.log("reportValue / value= " + value + " / user= " + user)
             countr -= value;
             let x = document.createElement("li");
             if (countr == 0) {                
@@ -73,17 +72,15 @@
         }
 
         function getComputerChoice() {
-            switch (countr) {                
-                case 1: 
-                case 2: return 1;
-                case 3: return 2;
-                case 4: return 3;
-                case 5:
-                case 6: return 1;
-                case 7: return 2;
-                case 8: return 3;
-                default: return Math.round(Math.random()*2)+1;
-            }
+            if(countr == 1) return 1;
+
+            //Optimal choice
+            var val = (countr-1) % 4;
+
+            if(val == 0) // User has chosen wisely
+                return Math.floor(Math.random()*3 + 1)  
+            else // User has lost already     
+                return val;
         }
     </script>
 </body>
