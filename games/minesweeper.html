@@ -82,9 +82,7 @@
         function generateSolution(){
             var cnt = 0;
             var cellCnt = document.getElementsByClassName('cell').length;
-            console.log(cellCnt)
             var maxCnt = Math.round((1+Math.random())*0.1*cellCnt);
-            console.log(maxCnt)
             minefield = [];
             
             do{            
@@ -185,91 +183,13 @@
                 xCell.textContent = cnt;
             }            
         }
-        // function isInitialValue(i,j){
-        //     let x = document.getElementById(i*gridSize + j);
-
-        //     if (x.textContent == '*') return true
-        //     return false;
-        // }
-
+        
         function isInitialValue(id){
             let x = document.getElementById(id);
 
             if (x.textContent == '*') return true;
             return false;
-        }
-        
-
-        // function hasText(){
-        //     return document.getElementById("end").textContent != "";
-        // }
-        
-
-        // function btnClick(amt){
-        //     if (!isValid(amt))
-        //         return;
-            
-        //     reportValue(amt, 0);
-
-        //     if (countr > 0)
-        //         setTimeout(function () { computerTurn(); },1200);
-        //  }
-
-        // function isValid(value) {
-        //     console.log("isValid")
-        //     if (countr == 0)
-        //         resetGame();
-
-        //     if (value > countr) {
-        //         if (countr == 1)
-        //             alert("Take your loss friend... just pick that last one up.  MUHAHA")
-        //         else
-        //             alert("You've attempted to pick up more sticks than are left in the pile.  Try again")
-        //         return false;
-        //     }
-        //     console.log("isValid = true")
-        //     return true;
-        // }
-
-        // function resetGame() {
-        //     countr = 23;
-
-        //     for (i = document.getElementsByTagName("li").length - 1; i >= 0; i--){
-        //         document.getElementsByTagName("li")[i].remove()
-        //     }            
-        //  }
-
-        // function reportValue(value, user){
-        //     console.log("reportValue / value= " + value + " / user= " + user)
-        //     countr -= value;
-        //     let x = document.createElement("li");
-        //     if (countr == 0) {                
-        //         x.textContent = output[user] + " LOST.  Game OVER"                
-        //     }
-        //     else
-        //         x.textContent = output[user] + " chose " + value + " --- " + countr + " left"
-
-        //     document.getElementById("game").append(x);
-        //     if (countr == 0) 
-        //         alert("We have a WINNER")
-        // }
-        // function computerTurn(){
-        //     reportValue(getComputerChoice(),1)            
-        // }
-
-        // function getComputerChoice() {
-        //     switch (countr) {                
-        //         case 1: 
-        //         case 2: return 1;
-        //         case 3: return 2;
-        //         case 4: return 3;
-        //         case 5:
-        //         case 6: return 1;
-        //         case 7: return 2;
-        //         case 8: return 3;
-        //         default: return Math.round(Math.random()*2)+1;
-        //     }
-        // }
+        }        
     </script>
 </body>
 </html>
