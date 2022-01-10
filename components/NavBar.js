@@ -18,7 +18,7 @@ class NavBar extends HTMLElement{
         <div class="menu">
             <div class="name">
                 <a href="./index.html">
-                    <img src="./Images/growth.png" alt="Icon representing growth">
+                    <img src="./images/growth.png" alt="Icon representing growth">
                     <h2>Curtis Ruder</h2>
                 </a>
             </div>
