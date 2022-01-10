@@ -1,39 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="urf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cjruder.net</title>
-    <link rel="stylesheet" href="sitestyle.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJR - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./components/SplashScreen.js"></script>
+    <script src="./components/NavBar.js"></script>
+    <script src="./components/Footer.js"></script>    
+    <script src="./components/BackGround.js"></script>  
 </head>
-
 <body>
-    <header>
+    <splash-screen></splash-screen>
+    <nav-bar></nav-bar>
+    <main>
         
-    </header>
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>                    
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="aboutme.html">Analytics</a></li>
-        </ul>
-    </nav>
-
-    <div class="content">
-        <main>
-            <h1>
-                Welcome to cjruder.net
-            </h1>
-            <p>
-                While I figure out what to do with this little ditty, feel free to try your hand at one of the games!
-            </p>
-        </main>
-    </div>
+        <img src="./Images/selfpic.png" alt="Picture of me" class="intro">
+        <h3>Hello and welcome!</h3>
+        <h1>Curtis Ruder</h1>
+        <h2>Engineer, Developer, Problem Solver</h2>
+        <p class="intro">With over a decade of various Engineering roles, continual growth as a leader, and commitment to daily improvement, I solve difficult challenges leveraging an ever growing toolset and capability.</p>
     
-    <ul>
-        <li><a href="games/memory.html">Memory</a> - Flip a card, match it with its mate.  Can you remember where it all was?!</li>
-        <li><a href="games/twothree.html">23</a> - Compete against the computer in a spirited game of pick-up sticks</li>
-        <li><a href="games/minesweeper.html">Minesweeper</a> - Find all the mines before they get ya!</li>
-    </ul>
+    </main>
+    <back-ground></back-ground>
+    <footer-comp></footer-comp>    
 </body>
 </html>

@@ -1,0 +1,149 @@
+@import "./variables";
+@import "./background";
+@import "./navbar";
+@import "./footer";
+
+// MIX IN DEFINITIONS
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin colorFunction($back, $text){
+    background-color: $back;
+    color: $text;
+}
+
+// Example of using mix-ins
+h5{
+    @include flexCenter();
+    @include colorFunction(black, white);
+}
+
+// Example of using inheritance
+h6{
+    @extend h5;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    background-color: transparent;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5{
+    line-height: 1.2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a{
+    color: $colorText;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    &:hover{
+        background-color: $colorDark;
+        color:$colorPrimary;
+    }
+}
+
+
+body {
+    position: relative;
+    min-height: 100%;
+    background-color: $colorBackground;
+    color: $colorText;
+    padding: 0 0 4rem; // Large enough for the footer
+}
+
+main{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // background-color: inherit;
+    color: $colorPrimary;
+
+    padding: 1rem;
+    width: 90%;
+    min-width: 350px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 4rem;
+    min-height: calc(100vh - 8rem);
+    top: 4rem;
+
+
+    p{
+        text-align: left;
+        padding:1rem;
+        line-height: 2.0rem;
+        color: $colorText;
+        width: 100%;
+        font-size: 1.2rem;
+
+        &.intro{
+            width: auto;
+            text-align: center;
+            @media screen and (max-width: $screenSmall){
+                display: none;
+            }
+        }
+    }
+
+    img{
+        //position:relative;
+        width: 30vh;
+        border: 1px solid $colorWhite;
+       // z-index: 1;
+
+        &.intro{
+            width: 35vh;
+            border-radius: 100%;
+            border-width: 5px;
+            //border: 3px solid $colorDark;
+        }
+
+        &:hover{
+            //border: .5rem solid $colorDark;
+            transform:scale(1.02, 1.02);
+            transition: all 0.5s ease-in-out;
+        }
+
+        @media screen and (max-width: $screenSmall){
+            border: .1rem solid $colorText;
+        }
+        
+    }
+
+    h1{
+        color: $colorPrimary;
+        font-size: $fontLarge;
+        padding: 1rem;
+        text-shadow: 3px 3px $colorSecond;  
+    }
+
+    h3, h2{
+        color: $colorSecond;  
+        padding: 1rem;  
+        text-shadow: 2px 2px $colorDark;   
+    }
+
+    h2{
+
+        font-size: $fontMed;
+    }
+
+    h3{
+        font-size: $fontSmall;
+    }
+}
+
