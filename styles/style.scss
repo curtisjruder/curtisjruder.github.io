@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./splashscreen";
 @import "./background";
 @import "./navbar";
 @import "./footer";
@@ -55,44 +56,33 @@ a{
 
 
 body {
-    position: relative;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: $colorBackground;
     color: $colorText;
-    padding: 0 0 4rem; // Large enough for the footer
 }
 
 main{
-    position:relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    // background-color: inherit;
-    color: $colorPrimary;
 
-    padding: 1rem;
-    width: 90%;
-    min-width: 350px;
+    padding: 4rem 2rem;
     max-width: 1000px;
     margin: auto;
-    margin-bottom: 4rem;
-    min-height: calc(100vh - 8rem);
-    top: 4rem;
 
+    min-height: calc(100vh - 4rem);
+
+    .intro{
+        text-align: center;
+    }
 
     p{
-        text-align: left;
         padding:1rem;
-        line-height: 2.0rem;
-        color: $colorText;
-        width: 100%;
         font-size: 1.2rem;
+        width: 100%;
 
         &.intro{
-            width: auto;
-            text-align: center;
             @media screen and (max-width: $screenSmall){
                 display: none;
             }
@@ -100,26 +90,22 @@ main{
     }
 
     img{
-        //position:relative;
-        width: 30vh;
-        border: 1px solid $colorWhite;
-       // z-index: 1;
+        width: 25vh;
+        border: 1px solid $colorText;
 
         &.intro{
             width: 35vh;
             border-radius: 100%;
             border-width: 5px;
-            //border: 3px solid $colorDark;
         }
 
         &:hover{
-            //border: .5rem solid $colorDark;
-            transform:scale(1.02, 1.02);
-            transition: all 0.5s ease-in-out;
+            transform:scale(1.01, 1.01);
+            transition: all 0.2s ease-in-out;
         }
 
         @media screen and (max-width: $screenSmall){
-            border: .1rem solid $colorText;
+            border-width: .1rem;
         }
         
     }
@@ -128,13 +114,13 @@ main{
         color: $colorPrimary;
         font-size: $fontLarge;
         padding: 1rem;
-        text-shadow: 3px 3px $colorSecond;  
+        text-shadow: 1.5px 1.5px $colorSecond;  
     }
 
     h3, h2{
         color: $colorSecond;  
         padding: 1rem;  
-        text-shadow: 2px 2px $colorDark;   
+        text-shadow: 2px 2px $colorBackground;   
     }
 
     h2{

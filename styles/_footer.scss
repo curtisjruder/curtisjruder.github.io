@@ -1,6 +1,7 @@
 footer-comp{
     footer {
-        position: absolute;
+        flex-shrink: 0;
+        //position: absolute;
         z-index: 0;
         width: 100%;
         bottom: 0;
@@ -18,7 +19,7 @@ footer-comp{
             font-size: $fontSmall;
             a {
                 margin: 0 1.1vw;
-                color: $colorDark;
+                color: $colorBackground;
                 text-decoration: none;
 
                 &:hover{

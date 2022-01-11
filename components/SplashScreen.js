@@ -10,35 +10,45 @@ class SplashScreen extends HTMLElement{
         const canvas = this.shadowRoot.getElementById("splashscreen");
         const ctx = canvas.getContext("2d");
 
+        let color = window.getComputedStyle(this).getPropertyValue("color");
+        canvas.style.backgroundColor = window.getComputedStyle(this).getPropertyValue("background-color")
+        //console.log(color)
+
         // Set text properties
-        const textSize = 10;
-        const textMultiplierX = 10;
-        const textMultiplierY = 10;
+        const textSize = 11;
+
+        let textMultiplier = 12;
+        let limit = 6;
 
         // Global text properties set within "generateTextDetails()""
         let textLength = 0;
         let xOffset = 0;
         let yOffset = 0;
 
+
         // Data arrays
         let particles = [];
         let textData;
+
 
         // Called initially to configure the text
 
         // Prints the text to canvas, records the pixel info, and clears the canvas
         function generateTextDetails(){   
             // Set the text value to use
-            let textValue = "C J R U D E R . N E T";    
-            if(canvas.width < 1200) textValue = "C J R U D E R"
+            let textValue = "C J R U D E R . N E T"; 
+ 
+            if(canvas.width < 1400) textValue = "C J R U D E R"  
             if(canvas.width < 800) textValue = "C J R"
             
-            // Set the text properites    
+            limit = canvas.width * .00625 + 3.5// speeds up at larger sizes
+            textMultiplier = 0.001875 * canvas.width + 8.25 // 9 at 400 and 12 at 2000
+  
             ctx.fillStyle = "white";
-            ctx.font = textSize + "px Arial";
+            ctx.font = textSize + "px Verdana";
             textLength = ctx.measureText(textValue).width
-            xOffset = (canvas.width - textLength * textMultiplierX) / 2
-            yOffset = (canvas.height - textSize * textMultiplierY) / 2
+            xOffset = (canvas.width - textLength * textMultiplier) / 2
+            yOffset = (canvas.height - textSize * textMultiplier) / 2
 
             // Draw text, get data, and reset
             ctx.fillText(textValue, 0, textSize, canvas.width)
@@ -49,7 +59,7 @@ class SplashScreen extends HTMLElement{
 
         // Saves the pixel data as a particle.  Updates the position for each iteration
         class Particle {
-            constructor(baseX, baseY, color){
+            constructor(baseX, baseY){
                 // baseX and baseY represent the position within the text
                 this.baseX = baseX;
                 this.baseY = baseY;
@@ -58,8 +68,8 @@ class SplashScreen extends HTMLElement{
                 this.color = color;
 
                 // x and y represent the starting position
-                this.x = baseX + Math.random() * canvas.width / 2 - canvas.width / 4;
-                this.y = Math.random() * canvas.height;        
+                this.y = Math.random() * canvas.height * 1.5 - 0.25 * canvas.height; 
+                this.x = Math.random() * canvas.width * 1.5 - 0.25 * canvas.width;
             }
 
             update(){
@@ -67,17 +77,16 @@ class SplashScreen extends HTMLElement{
                 let dx = this.baseX - this.x;
                 let dy = this.baseY - this.y;     
                 let distance = Math.sqrt(dx * dx + dy * dy)
-                        
-                let limit = 15;
-                let multiplier = 3;
-                if(dx * dx < limit)
+                                
+                if(Math.abs(dx) < limit)
                     this.x += dx
                 else
-                    this.x += dx / distance * multiplier;
-                if(dy * dy < limit)
+                    this.x += dx / distance * limit;
+
+                if(Math.abs(dy) < limit)
                     this.y += dy
                 else
-                    this.y += dy / distance * multiplier;
+                    this.y += dy / distance * limit;
 
                 // redraw
                 ctx.beginPath();
@@ -107,7 +116,8 @@ class SplashScreen extends HTMLElement{
                     addParticle(i,j)
                 }
             }
-            setTimeout(animate, 200)
+
+            setTimeout(animate, 300)
         }
 
         function addParticle(i, j){
@@ -115,13 +125,7 @@ class SplashScreen extends HTMLElement{
             const col = j * 4
 
             if(textData.data[row + col + 3] === 0) return;
-
-            let color = textData.data[row + col] // Red    
-            color += "," + textData.data[row + col + 1] // Green
-            color += "," + textData.data[row + col + 2] // Blue
-            color += "," + textData.data[row + col + 3] / 255 // Opacity
-
-            particles.push(new Particle(j * textMultiplierX + xOffset, i * textMultiplierY + yOffset, "rgba(" + color + ")"))
+            particles.push(new Particle(j * textMultiplier + xOffset, i * textMultiplier + yOffset))
         }
 
         function animate(){    
@@ -131,20 +135,17 @@ class SplashScreen extends HTMLElement{
             for(let i = 0; i < particles.length; i++)
                 sumDistances += particles[i].update();
 
-            connect(sumDistances / particles.length / 6);
+            connect(sumDistances / particles.length / 10);
             if(sumDistances < 10) {
-                reColor("#070707", "white")
-
                 setTimeout(()=>{canvas.classList.add("display-none")},500)
                 return;
             }
-
-            // recurse
-            requestAnimationFrame(animate);
+            
+            requestAnimationFrame(animate);            
         }
 
         function connect(maxDistance){
-            maxDistance = Math.max(textMultiplierX + textMultiplierY, maxDistance)
+            maxDistance = Math.max(textMultiplier + textMultiplier, maxDistance)
 
             for(let i = 0; i < particles.length - 1; i++){
                 for(let j = i; j < particles.length; j++){
@@ -154,7 +155,7 @@ class SplashScreen extends HTMLElement{
                         //let opacity = 1 //(maxDistance - distance) / maxDistance;
 
                         ctx.strokeStyle = particles[i].color;
-                        ctx.lineWidth = 2;
+                        ctx.lineWidth = 1;
                         ctx.beginPath();                
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -162,17 +163,6 @@ class SplashScreen extends HTMLElement{
                     }
                 }
             }
-        }
-
-        function reColor(backColor, textColor){
-            canvas.style.backgroundColor = backColor;
-
-            for(let i = 0; i < particles.length; i++){
-                particles[i].color = textColor;
-                particles[i].update();
-            }
-
-            connect(0)
         }
 
         function getDistance(i, j){    
@@ -192,17 +182,21 @@ class SplashScreen extends HTMLElement{
                 #splashscreen {
                     height: 100%;
                     width: 100%;
-                    background: black;
-                    position: absolute;
+                    
+                    position: fixed;
                     top: 0;
-                    z-index: 100;
+                    z-index: 150;
                     left: 0;    
                     overflow: hidden;
                 }
                 #splashscreen.display-none {
                     opacity: 0;
                     z-index: -100;   
-                    transition: all 1.0s;
+                    height: 0;
+                    width: 0;
+                    left: 50vw;
+                    top: 50vh;
+                    transition: all 0.3s;
                 }
             </style> 
 

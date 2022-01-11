@@ -1,41 +1,39 @@
 nav-bar{    
     .menu{
-        position: absolute;
+        position: fixed;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 4rem;
-        background-color: transparent;
-        padding:0px;
-        // z-index: 100;
+        background-color: $colorBackground;
+        padding:0;
         top: 0;
         left: 0;
+        z-index: 100;
 
-        .name{
-            position: relative;
-            z-index: 1;
+        &.open{
+            background-color: transparent;
+        }
+
+        .name.open{
+            visibility: hidden;
         }
 
         .name a{
-
             height: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;   
-            
+            align-items: center;               
             color: inherit;
-            text-decoration: none;
         }
 
         h2{
             font-size: $fontSmall;
             margin-left: 2.5vw;
-            transition: all 0.3s ease-in-out;
             &:hover{
-                transition: all 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
                transform: scale(1.05,1.05)
             }
         }
@@ -58,42 +56,40 @@ nav-bar{
         position: relative; 
         justify-content: center;
         align-items: center;
-        width: 35px;
+        width: 30px;
         height: 100%;
         cursor: pointer;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
         z-index: 50;
         &:hover{
             transform: scale(1.1,1.0);
         }
     }
 
-    .menu-btn__burger{
+    @mixin burgerLine(){
         width: 100%;
         height: 2.5px;
         background: $colorText;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px $colorShadow;
-        transition: all 0.5s ease-in-out;    
-        
+        border-radius: 10%;
+        box-shadow: 0 2px 2px $colorBackground;
+        transition: all 0.3s ease-in-out;  
+    }
+
+    .menu-btn__burger{
+        @include burgerLine();       
 
         &::before, &::after{
             content: '';
             position: absolute;
-            width: 100%;
-            height: 2.5px;
-            background: $colorText;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px $colorShadow;
-            transition: all 0.5s ease-in-out; 
+            @include burgerLine();  
         }
 
         &::before{
-            transform: translateY(-10px);
+            transform: translateY(-9px);
         }
 
         &::after{
-            transform: translateY(10px);
+            transform: translateY(9px);
         }
     }
 
@@ -101,75 +97,72 @@ nav-bar{
         transform:rotate(270deg);        
         background: transparent;
         box-shadow: none;
-    }
 
-    .menu-btn.open .menu-btn__burger::before{
-        transform:rotate(45deg);
-        background: $colorDark;
-       
-    }
+        &::before{
+            transform:rotate(45deg);
+            background: $colorBackground;
+           
+        }
 
-    .menu-btn.open .menu-btn__burger::after{
-        transform:rotate(-45deg);
-        background: $colorDark;
+        &::after{
+            transform:rotate(-45deg);
+            background: $colorBackground;
+        }
     }
 
     nav{
-        position:fixed;
-        // visibility: hidden;
+        position:fixed;       
         height: 100%;
         width: 0px;
         top: 0px;
         background-color: $colorPrimary;
         justify-content: center;
         align-items: center;
-        transition: all 0.5s ease-in-out;
-        // z-index: -10;
-    }
+        transition: all 0.3s ease-in-out;
 
-    nav ul{
-        visibility: hidden;
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        /* padding: 5%; */
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        flex-wrap: wrap;   
-        justify-content: space-around;
-        align-content: center;
-    }
+        ul{
+            visibility: hidden;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            height: 100vh;        
+            width: 50%;
+            margin: auto;
+            flex-direction: column;
+            flex-wrap: wrap;   
+            justify-content: space-around;
+            align-content: center;
+        }
 
-    nav.open{
-        // visibility: visible;
-        // overflow-y: hidden;
-        height: 100vh;
-        width: 100%;
-        transition: all 0.5s ease-in-out;
-        z-index: 10;
-    }
+        li{
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+    
+            &:hover{
+                transition: all 0.3s ease-in-out;
+                border-bottom: 7px solid $colorSecond;
+            }
+    
+            a{
+                display: block;
+                background-color: inherit;    
+                color: $colorBackground;
+                font-size: $fontMed;   
+                width: 100%;
+            }
+        }
 
-    nav.open ul{
-        visibility: visible;
-        transition-delay: 0.2s;
-
-    }
-
-    nav li a{
-        background-color: inherit;    
-        color: $colorDark;
-        padding: 5px 10px;
-        font-size: $fontMed;   
-        text-decoration: none; 
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        transition: all 0.5s ease-in-out;
-
-        &:hover{
-            text-decoration: underline;                        
-            transition: all 0.5s ease-in-out;
+        &.open{
+            height: 100vh;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+            z-index: 10;
+    
+            ul{
+                visibility: visible;
+                transition-delay: 0.2s;
+            }
         }
     }
 }

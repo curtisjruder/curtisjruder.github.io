@@ -7,6 +7,8 @@ class NavBar extends HTMLElement{
         this.innerHTML = this.getHTML();
         this.querySelector(".menu-btn").addEventListener("click", (e) => {
             e.currentTarget.classList.toggle("open")
+            this.querySelector("div.name").classList.toggle("open")
+            this.querySelector("div.menu").classList.toggle("open")
             this.querySelector("nav").classList.toggle("open")
         }, false)
     }

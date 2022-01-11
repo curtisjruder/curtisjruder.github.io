@@ -6,15 +6,12 @@ class BackGround extends HTMLElement{
     connectedCallback() {
         this.innerHTML = this.getHTML();
 
-        const canvas = this.querySelector("#background");
-        const ctx = canvas.getContext("2d");
-
-        //canvas.width = window.innerWidth;
-        //canvas.height = window.innerHeight;
-
         // Global variables
+        const canvas = this.querySelector("#background");
+        const ctx = canvas.getContext("2d");        
         let arcs = [];
-        let rgb = "255, 255, 255"
+        let color = window.getComputedStyle(canvas).getPropertyValue("color");
+
         let arcCnt = Math.floor(Math.random() * 10) + 15;
 
         // Saves the pixel data as an arc.  Updates the position for each iteration
@@ -29,13 +26,13 @@ class BackGround extends HTMLElement{
             }
 
             draw(){              
-                let opacity = Math.random() * 0.8 + 0.2;
-                //let opacity = 1;
+                //let opacity = Math.random() * 0.2 +.05;
+                let opacity = 1;
 
                 ctx.beginPath();
                 ctx.lineWidth = this.size;
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = "rgba(" + rgb + "," + opacity + ")";
+                ctx.strokeStyle = color;//"rgba(" + rgb + "," + opacity + ")";
                 ctx.stroke();
             }
         }
