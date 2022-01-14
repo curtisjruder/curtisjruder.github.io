@@ -1,0 +1,74 @@
+section.resume{
+       width: 100%;             
+}
+
+div.component{
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    background-color: $colorText;  
+    border: 1px solid $colorBackground;
+    color: $colorBackground;
+}
+
+div.education{
+    @include flexBox(flex-start);
+
+    img.edu-picture{
+        width: 80px;
+        margin: 0 1.5vw 0 calc(3rem + 4vw);
+        border: 3px solid $colorBackground;
+    }
+
+    div.label{
+        padding: 0;
+        margin: 0;
+        margin-left: 0.5rem;
+        font-size: $fontXSmall;
+        color:inherit;
+    }
+    h3{
+        padding: 0;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        color:inherit;
+        text-shadow: none;
+    }
+
+    @media screen and (max-width: $screenSmall){
+        flex-direction: column;
+
+        padding: 1vh;
+        img.edu-picture{            
+            margin: 2vh auto;
+        }  
+    }
+}
+
+h1.title{    
+        padding: 1rem 4rem 0 4rem;
+        border-bottom: solid $colorPrimary 3px;        
+}
+
+div.technology{
+    h2{
+        padding: 0.2rem 0;
+        color: inherit;
+        text-shadow: none;
+    }
+
+    ul{
+        @include flexBox(flex-start);
+
+        li{
+            margin: 0.2rem;
+            padding: 0.5rem 1.2rem;
+            list-style-type: none;
+            background-color: $colorBackground;
+            color: $colorText;
+            border-radius: 5%;
+            border: 1px solid $colorText;
+            font-size: $fontSmall;
+        }
+    }
+}

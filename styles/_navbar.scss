@@ -30,6 +30,7 @@ nav-bar{
         }
 
         h2{
+            color: $colorText;
             font-size: $fontSmall;
             margin-left: 2.5vw;
             &:hover{
@@ -41,6 +42,8 @@ nav-bar{
         img{
             margin-left: 2.5vw;
             height: calc(2vw + 20px);
+            width: auto;
+            border: none;
             max-height: 80%;
             min-height: 50%;
             &:hover{
@@ -70,8 +73,6 @@ nav-bar{
         width: 100%;
         height: 2.5px;
         background: $colorText;
-        border-radius: 10%;
-        box-shadow: 0 2px 2px $colorBackground;
         transition: all 0.3s ease-in-out;  
     }
 

@@ -192,11 +192,11 @@ class SplashScreen extends HTMLElement{
                 #splashscreen.display-none {
                     opacity: 0;
                     z-index: -100;   
-                    height: 0;
-                    width: 0;
-                    left: 50vw;
-                    top: 50vh;
-                    transition: all 0.3s;
+                    height: 500vh;
+                    width: 500vw;
+                    left: -200vw;
+                    top: -200vh;
+                    transition: all 0.7s ease-in-out;
                 }
             </style> 
 

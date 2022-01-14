@@ -3,6 +3,7 @@
 @import "./background";
 @import "./navbar";
 @import "./footer";
+@import "./resume";
 
 // MIX IN DEFINITIONS
 @mixin flexCenter{
@@ -32,7 +33,7 @@ h6{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Verdana, Geneva, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
     background-color: transparent;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -42,6 +43,28 @@ h6{
 h1, h2, h3, h4, h5{
     line-height: 1.2;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: $colorText;
+}
+
+h1{
+    color: $colorPrimary;
+    font-size: $fontLarge;
+    padding: 1rem;
+    text-shadow: 1.5px 1.5px $colorSecond;  
+}
+
+h3, h2{         
+    padding: 1rem;  
+    text-shadow: 2px 2px $colorBackground;   
+}
+
+h2{
+    color: $colorPrimary;
+    font-size: $fontMed;
+}
+
+h3{
+    font-size: $fontSmall;
 }
 
 a{
@@ -49,7 +72,7 @@ a{
     text-decoration: none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     &:hover{
-        background-color: $colorDark;
+        background-color: $colorBackground;
         color:$colorPrimary;
     }
 }
@@ -59,6 +82,21 @@ body {
     min-height: 100vh;
     background-color: $colorBackground;
     color: $colorText;
+}
+
+img{
+    width: 25vh;
+    border: 1px solid $colorText;
+
+    &:hover{
+        transform:scale(1.01, 1.01);
+        transition: all 0.2s ease-in-out;
+    }
+
+    @media screen and (max-width: $screenSmall){
+        border-width: .1rem;
+    }
+    
 }
 
 main{
@@ -75,11 +113,21 @@ main{
 
     .intro{
         text-align: center;
+
+        img{
+            width: 32vh;
+            border-radius: 100%;
+            border-width: 5px;
+        }
+
+        h1{
+            font-size: $fontXLarge;
+        }
     }
 
     p{
         padding:1rem;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         width: 100%;
 
         &.intro{
@@ -87,49 +135,6 @@ main{
                 display: none;
             }
         }
-    }
-
-    img{
-        width: 25vh;
-        border: 1px solid $colorText;
-
-        &.intro{
-            width: 35vh;
-            border-radius: 100%;
-            border-width: 5px;
-        }
-
-        &:hover{
-            transform:scale(1.01, 1.01);
-            transition: all 0.2s ease-in-out;
-        }
-
-        @media screen and (max-width: $screenSmall){
-            border-width: .1rem;
-        }
-        
-    }
-
-    h1{
-        color: $colorPrimary;
-        font-size: $fontLarge;
-        padding: 1rem;
-        text-shadow: 1.5px 1.5px $colorSecond;  
-    }
-
-    h3, h2{
-        color: $colorSecond;  
-        padding: 1rem;  
-        text-shadow: 2px 2px $colorBackground;   
-    }
-
-    h2{
-
-        font-size: $fontMed;
-    }
-
-    h3{
-        font-size: $fontSmall;
     }
 }
 
