@@ -6,6 +6,7 @@
     <title>CJR - About</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
     <script src="./components/NavBar.js"></script>
     <script src="./components/Footer.js"></script>    
     <script src="./components/BackGround.js"></script>  
@@ -14,35 +15,78 @@
     <nav-bar></nav-bar>
     <main>
         <section class="resume">
-            <h1 class="title">Education</h1>
-            <div class="education component">
-                <img class="edu-picture" src="./images/KSU.jpg" alt="Kansas State University emblem">
-                <div class="edu-details">
-                    <h3>Kansas State University</h3>
-                    <div class="label">B.S. Chemical Engineering (3.6)</div>
-                    <div class="label">2004 - 2009</div>
-                </div>          
+            <h1 class="title fade-transition">Summary</h1>            
+            <div class="summary component fade-transition">                            
+                <h2>Software Product Manager</h2>
+                <p>
+                    Product manager for commercial desktop application <i>PRISM™</i>. 
+                    Set software strategy, vision, and marketing objectives.
+                    Interface directly with clients and business leaders to understand needs and develop relationships.
+                    Develop internal metrics for quality and productivity related to software development and data analysis.
+                    Quarterly review and presentation of product financials and return on investment.
+                </p>
             </div>
-            <div class="education component">
-                <img class="edu-picture" src="./images/TexasAM.jpg" alt="Texas A&M Corpus Christi emblem">
-                <div class="edu-details">
-                    <h3>Texas A&M University - Corpus Christi</h3>
-                    <div class="label">MBA with Finance Concentration (3.9)</div>
-                    <div class="label">2016 - 2019</div>
-                </div>          
+            <div class="summary component fade-transition">  
+                <h2>Software Developer</h2>            
+                <p>
+                    Sole developer for commercial desktop application <i>PRISM™</i>.  
+                    Led conversion effort for 85,000 lines of VB6 to VB.Net while shrinking code base 25%.  
+                    Migrated software database from Microsoft Access to SQLite while retaining backward compatibility.  
+                    Ported application critical Excel VBA code to new Excel XLL add-in which eliminated code duplication, obfuscated intellectual property, and extended functionality to other workbooks.
+                    Enhanced application compatibility with Microsoft Office by extending capability to work with both 32 and 64 bit Office products.  
+                    Refactored critical bottlenecks resulting in a 80% reduction in software runtime.   
+                    Automated various routine tasks and data entry resulting in 200 man hours per month reduction.
+                </p>
+                
             </div>
-            <div class="education component">
-                <img class="edu-picture" src="./images/FHSU.jpg" alt="Fort Hays State emblem">
-                <div class="edu-details">
-                    <h3>Fort Hays State University</h3>
-                    <div class="label">B.S. Computer Science (4.0)</div>
-                    <div class="label">2020 - 2022</div>
-                </div>          
+            <div class="summary component fade-transition">  
+                <h2>Refinery Optimization (LP)</h2>
+                <p>
+                    Weekly use and interpretation of results from Aspen PIMS LP model. 
+                    Developed grassroots unit models and integrated with existing LP model.
+                    Calibrated yield profile for refinery conversion units using combination of process data, lab samples, and statistical correlations.
+                    Coordinated and integrated results from sampling study to improve non-linear characterization of gasoline blending operations.
+                </p>
+                
+            </div>
+            <div class="summary component fade-transition">  
+                <h2>Economic Planning</h2>
+                <p>
+                    Use and interpretation of LP results to drive optimization objectives, blending activities, and component balances.
+                    Economic evaluation for base business and value creation activities including consideration of alternatives, cash flow impacts, and return on investment implications.
+                    Coordinated with operations team to set operational objectives and understand constraints.
+                    Coached and developed process engineers to understand the economic objectives based upon weekly economic runs.
+                </p>
+                
+            </div>
+            <div class="summary component fade-transition">  
+                <h2>Process Engineer</h2>
+                <p>
+                    Direct support experience for various refinery units including FCC, crude units, and fixed-bed cumene alkylation.
+                    Familiarity with operational objectives and limitations of nearly all refinery process units.                    
+                    Lead process engineer for overnight support for major refinery turnaround.
+                    Lead process engineer overseeing a team of four process engineers.
+                </p>
+                
+            </div>
+            <div class="summary component fade-transition">  
+                <h2>Process Modeling</h2>
+                <p>
+                    Site lead engineer for Aspen HYSYS process simulation.
+                    Multiple years of experience in development and optimization steady-state unit models.
+                    Experience with process equipment sizing using simulation models specific to heat exchanger and distillation trays.
+                </p>
             </div>
         </section>
         <section class="resume">
-            <h1 class="title">Technology</h1>            
-            <div class="technology component">            
+            <h1 class="title fade-transition">Experience</h1>            
+            <div class="experience component">            
+                <h2>Coming soon...</h2>
+            </div>
+        </section>
+        <section class="resume">
+            <h1 class="title fade-transition">Technology</h1>            
+            <div class="technology component fade-transition">            
                 <h2>Skills</h2>
                 <ul>
                     <li>C++</li>
@@ -63,7 +107,7 @@
                 </ul>
             </div>
 
-            <div class="technology component">            
+            <div class="technology component fade-transition">            
                 <h2>Tools</h2>
                 <ul>           
                     <li>Aspen HYSYS</li>                
@@ -80,12 +124,43 @@
                 </ul>
             </div>
         </section>
+        
         <section class="resume">
-            <h1 class="title">Experience</h1>            
-            <div class="experience component">            
-                <h2>Coming soon...</h2>
+            <h1 class="title fade-transition">Education</h1>
+            
+            <div class="education component fade-transition">
+                <img class="edu-picture" src="./images/FHSU.jpg" alt="Fort Hays State emblem">
+                <div class="edu-details">
+                    <h3>Fort Hays State University</h3>
+                    <div class="label">B.S. Computer Science (4.0)</div>
+                    <div class="label">2020 - 2022</div>
+                </div>          
+            </div>
+            <div class="education component fade-transition">
+                <img class="edu-picture" src="./images/TexasAM.jpg" alt="Texas A&M Corpus Christi emblem">
+                <div class="edu-details">
+                    <h3>Texas A&M University - Corpus Christi</h3>
+                    <div class="label">MBA with Finance Concentration (3.9)</div>
+                    <div class="label">2016 - 2019</div>
+                </div>          
+            </div>
+            <div class="education component fade-transition">
+                <img class="edu-picture" src="./images/KSU.jpg" alt="Kansas State University emblem">
+                <div class="edu-details">
+                    <h3>Kansas State University</h3>
+                    <div class="label">B.S. Chemical Engineering (3.6)</div>
+                    <div class="label">2004 - 2009</div>
+                </div>          
             </div>
         </section>
+    <section class="resume">
+        <h1 class="title fade-transition"></h1>             
+        <a href="./Curtis Ruder Resume 2022.pdf" target="_blank" class="fade-transition">
+            <div class="download">
+                Download Resume
+            </div>
+        </a>        
+    </section>
     </main>
     <back-ground></back-ground>
     <footer-comp></footer-comp>  

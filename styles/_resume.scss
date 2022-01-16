@@ -3,12 +3,12 @@ section.resume{
 }
 
 div.component{
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-    max-width: 800px;
-    background-color: $colorText;  
-    border: 1px solid $colorBackground;
-    color: $colorBackground;
+    padding: 1.0rem;
+    margin: 1.0rem auto;
+    max-width: 900px;
+    //background-color: $colorText;  
+    //border: 1px solid $colorBackground;
+    //color: $colorBackground;
 }
 
 div.education{
@@ -17,7 +17,7 @@ div.education{
     img.edu-picture{
         width: 80px;
         margin: 0 1.5vw 0 calc(3rem + 4vw);
-        border: 3px solid $colorBackground;
+        //border: 3px solid $colorBackground;
     }
 
     div.label{
@@ -69,6 +69,44 @@ div.technology{
             border-radius: 5%;
             border: 1px solid $colorText;
             font-size: $fontSmall;
+
+            &:hover{
+                background-color: $colorPrimary;
+                color: $colorBackground;
+                transition:all .6s ease-in-out;
+            }
         }
+    }
+}
+
+div.download{
+    width: 300px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    list-style-type: none;
+    background-color: $colorPrimary;
+    color: $colorBackground;
+    border-radius: 5%;
+    border: 1px solid $colorText;
+    font-size: $fontSmall;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        transform: scale(1.05, 1.05);     
+        transition: all 0.3s ease-in-out;
+    }
+
+
+}
+
+div.experience{
+
+}
+
+div.summary{
+    h2{
+        padding: 0.2rem 0;
+        color: inherit;
+        text-shadow: none;
     }
 }
