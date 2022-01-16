@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5{
 
 h1{
     color: $colorPrimary;
-    font-size: $fontLarge;
+    font-size: $fontXLarge;
     padding: 1rem;
     text-shadow: 1.5px 1.5px $colorSecond;  
 }
@@ -60,11 +60,11 @@ h3, h2{
 
 h2{
     color: $colorPrimary;
-    font-size: $fontMed;
+    font-size: $fontLarge;
 }
 
 h3{
-    font-size: $fontSmall;
+    font-size: $fontMed;
 }
 
 @keyframes fade-in {
@@ -83,7 +83,7 @@ h3{
 }
 
 .faded {
-    animation: fade-in 0.2s;
+    animation: fade-in 0.3s;
     opacity: 1;
 }
 
@@ -126,7 +126,7 @@ main{
     align-items: center;
 
     padding: 4rem 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
 
     min-height: calc(100vh - 4rem);
@@ -142,13 +142,13 @@ main{
         }
 
         h1{
-            font-size: $fontXLarge;
+            font-size: $fontXXLarge;
         }
     }
 
     p{
         padding:1rem;
-        font-size: 1.3rem;
+        font-size: $fontSmall;
         width: 100%;
 
         &.intro{

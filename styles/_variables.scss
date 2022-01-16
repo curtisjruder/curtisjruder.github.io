@@ -1,16 +1,18 @@
 $colorPrimary: #2ae7e7;
+
 $colorSecond: rgb(219, 143, 113);// rgb(236, 189, 255);
-$colorBackground: #152020;
+$colorBackground: #201A1A;
 $colorText: #dbdbdb;
 
 $screenSmall: 600px;
 $screenMed: 1000px;
 
-$fontXLarge: calc(2.5vw + 30px);
-$fontLarge: calc(1.8vw + 25px);
-$fontMed: calc(1.0vw + 20px);
-$fontSmall: calc(0.4vw + 13px);
-$fontXSmall: calc(0.3vw + 10px);
+$fontXXLarge: calc(1.5vw + 38px);
+$fontXLarge: calc(.5vw + 32px);
+$fontLarge: calc(.4vw + 27px);
+$fontMed: calc(.3vw + 22.5px);
+$fontSmall: calc(0.2vw + 16.5px);
+$fontXSmall: calc(0.1vw + 14px);
 
 @mixin flexBox($justify) {
     display: flex;

@@ -1,11 +1,15 @@
 section.resume{
-       width: 100%;             
+       width: 100%;      
+       h2{
+           color: $colorText;
+           padding: 0.2rem 0;
+           text-shadow: none;
+       }       
 }
 
 div.component{
-    padding: 1.0rem;
-    margin: 1.0rem auto;
-    max-width: 900px;
+    padding: 1rem 0.5rem;
+    margin: 1rem auto;
     //background-color: $colorText;  
     //border: 1px solid $colorBackground;
     //color: $colorBackground;
@@ -17,7 +21,6 @@ div.education{
     img.edu-picture{
         width: 80px;
         margin: 0 1.5vw 0 calc(3rem + 4vw);
-        //border: 3px solid $colorBackground;
     }
 
     div.label{
@@ -51,15 +54,9 @@ h1.title{
 }
 
 div.technology{
-    h2{
-        padding: 0.2rem 0;
-        color: inherit;
-        text-shadow: none;
-    }
-
     ul{
         @include flexBox(flex-start);
-
+        margin: 1vh 4vw;
         li{
             margin: 0.2rem;
             padding: 0.5rem 1.2rem;
@@ -95,18 +92,72 @@ div.download{
         transform: scale(1.05, 1.05);     
         transition: all 0.3s ease-in-out;
     }
-
-
-}
-
-div.experience{
-
 }
 
 div.summary{
-    h2{
-        padding: 0.2rem 0;
-        color: inherit;
-        text-shadow: none;
+    li{
+      margin: 1vh 4vw; 
+      font-size: $fontSmall; 
     }
 }
+
+div.experience{
+    div.roles{
+        margin-left: 3vw;
+    }
+
+    .company{
+        @include flexBox(space-between);
+
+        .company-detail{
+            font-size: $fontXSmall;
+            text-align: end;
+
+        }
+
+        @media screen and (max-width: $screenSmall){
+            flex-direction: column;    
+            padding: 1vh;
+        }
+    }
+    
+    .role-detail{
+        @include flexBox(space-between);
+        margin: 2vh 0 0 2vw;
+        text-align: right;
+        div{
+            font-size: $fontXSmall;
+        }
+
+        @media screen and (max-width: $screenSmall){
+            flex-direction: column;    
+            padding: 1vh;
+        }
+    }
+
+    .role-responsibility{
+        margin-left:5vw;
+        p{
+            font-size: $fontSmall;
+            padding: 0.8rem;
+            &:first-child{
+                padding-top: 0;
+            }
+        }
+
+        ul{
+            padding-left: 6vw;
+        }
+
+        li{
+            padding-top: 0;
+            font-size: $fontXSmall;
+        }        
+        li:not(:first-child){
+            margin-top: 1vh;
+            
+        }
+    }
+}
+
+
