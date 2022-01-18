@@ -300,8 +300,8 @@ section.resume h2 {
 }
 
 div.component {
-  padding: 1rem 0.5rem;
-  margin: 1rem auto;
+  padding: 2vh 1vw;
+  margin: 1vh auto;
 }
 
 div.education {
@@ -426,7 +426,7 @@ div.summary li {
 }
 
 div.experience div.roles {
-  margin-left: 3vw;
+  margin-left: 1.5vw;
 }
 
 div.experience .company {
@@ -478,7 +478,7 @@ div.experience .role-detail {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2vh 0 0 2vw;
+  margin: 2vh 0 0 1.5vw;
   text-align: right;
 }
 
@@ -492,17 +492,18 @@ div.experience .role-detail div {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1vh;
+    padding: 1vh 1vw;
+    text-align: center;
   }
 }
 
 div.experience .role-responsibility {
-  margin-left: 5vw;
+  margin-left: 3vw;
 }
 
 div.experience .role-responsibility p {
   font-size: calc(0.2vw + 16.5px);
-  padding: 0.8rem;
+  padding: 2vh 2vw;
 }
 
 div.experience .role-responsibility p:first-child {
@@ -510,7 +511,7 @@ div.experience .role-responsibility p:first-child {
 }
 
 div.experience .role-responsibility ul {
-  padding-left: 6vw;
+  padding-left: calc(3vw + 1rem);
 }
 
 div.experience .role-responsibility li {
