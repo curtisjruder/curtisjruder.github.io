@@ -502,8 +502,9 @@ div.experience .role-responsibility {
 }
 
 div.experience .role-responsibility p {
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.1vw + 14px);
   padding: 2vh 2vw;
+  line-height: 2.5vh;
 }
 
 div.experience .role-responsibility p:first-child {

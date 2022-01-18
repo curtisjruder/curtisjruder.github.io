@@ -140,8 +140,9 @@ div.experience{
     .role-responsibility{
         margin-left:3vw;
         p{
-            font-size: $fontSmall;
+            font-size: $fontXSmall;
             padding: 2vh 2vw;
+            line-height: 2.5vh;
             &:first-child{
                 padding-top: 0;
             }
