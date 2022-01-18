@@ -421,8 +421,8 @@ div.download:hover {
 }
 
 div.summary li {
-  margin: 1vh 4vw;
-  font-size: calc(0.2vw + 16.5px);
+  margin: .5vh 3vw;
+  font-size: calc(0.1vw + 14px);
 }
 
 div.experience div.roles {
