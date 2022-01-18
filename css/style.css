@@ -429,6 +429,12 @@ div.experience div.roles {
   margin-left: 1.5vw;
 }
 
+@media screen and (max-width: 600px) {
+  div.experience div.roles {
+    margin-left: 0;
+  }
+}
+
 div.experience .company {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -493,6 +499,7 @@ div.experience .role-detail div {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 1vh 1vw;
+    margin: 1vh 0;
     text-align: center;
   }
 }
@@ -501,14 +508,27 @@ div.experience .role-responsibility {
   margin-left: 3vw;
 }
 
+@media screen and (max-width: 600px) {
+  div.experience .role-responsibility {
+    margin: 1vh 0;
+  }
+}
+
 div.experience .role-responsibility p {
   font-size: calc(0.1vw + 14px);
-  padding: 2vh 2vw;
-  line-height: 2.5vh;
+  padding: 0;
+  margin: 1.5vh 1.5vw;
+  line-height: calc(2vh + 0.7rem);
+}
+
+@media screen and (max-width: 600px) {
+  div.experience .role-responsibility p {
+    margin: 1vh 1vw;
+  }
 }
 
 div.experience .role-responsibility p:first-child {
-  padding-top: 0;
+  margin-top: 0;
 }
 
 div.experience .role-responsibility ul {

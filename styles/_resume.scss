@@ -104,6 +104,9 @@ div.summary{
 div.experience{
     div.roles{
         margin-left: 1.5vw;
+        @media screen and (max-width: $screenSmall){
+            margin-left: 0;
+        }
     }
 
     .company{
@@ -132,24 +135,37 @@ div.experience{
         @media screen and (max-width: $screenSmall){
             flex-direction: column;    
             padding: 1vh 1vw;
-
+            margin: 1vh 0;
             text-align: center;            
         }
     }
 
     .role-responsibility{
         margin-left:3vw;
+
+        @media screen and (max-width: $screenSmall){
+            margin: 1vh 0;        
+        }
+
         p{
             font-size: $fontXSmall;
-            padding: 2vh 2vw;
-            line-height: 2.5vh;
-            &:first-child{
-                padding-top: 0;
+            padding: 0;
+            margin: 1.5vh 1.5vw;
+            line-height: calc(2vh + 0.7rem);
+            
+            @media screen and (max-width: $screenSmall){
+                margin: 1vh 1vw;        
             }
+
+            &:first-child{
+                margin-top: 0;
+            }
+
         }
 
         ul{
             padding-left: calc(3vw + 1rem);
+
         }
 
         li{
