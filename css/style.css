@@ -458,6 +458,10 @@ div.experience .company .company-detail {
   text-align: end;
 }
 
+div.experience .company h2 {
+  text-align: center;
+}
+
 @media screen and (max-width: 600px) {
   div.experience .company {
     -webkit-box-orient: vertical;

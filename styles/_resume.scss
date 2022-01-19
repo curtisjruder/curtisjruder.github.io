@@ -115,7 +115,10 @@ div.experience{
         .company-detail{
             font-size: $fontXSmall;
             text-align: end;
+        }
 
+        h2{
+            text-align: center;
         }
 
         @media screen and (max-width: $screenSmall){
