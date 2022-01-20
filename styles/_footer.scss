@@ -18,7 +18,7 @@ footer-comp{
             display: inline;
             font-size: $fontSmall;
             a {
-                margin: 0 1.1vw;
+                margin: 0 1.051vw;
                 color: $colorBackground;
                 text-decoration: none;
 
@@ -30,10 +30,14 @@ footer-comp{
         }
 
         .social-row {
-            font-size: $fontSmall;
+            li{
+                font-size: calc(0.25vw + 18px);
+            }
+            
+    
 
             li a {
-                margin: 0 1.1vw;
+                margin: 0 1vw;
             }
         }
     }

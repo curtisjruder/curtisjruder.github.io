@@ -270,7 +270,7 @@ footer-comp footer ul li {
 }
 
 footer-comp footer ul li a {
-  margin: 0 1.1vw;
+  margin: 0 1.051vw;
   color: #201A1A;
   text-decoration: none;
 }
@@ -281,12 +281,12 @@ footer-comp footer ul li a:hover {
           box-shadow: inset 0 -0.3rem 0 0 #db8f71;
 }
 
-footer-comp footer .social-row {
-  font-size: calc(0.2vw + 16.5px);
+footer-comp footer .social-row li {
+  font-size: calc(0.25vw + 18px);
 }
 
 footer-comp footer .social-row li a {
-  margin: 0 1.1vw;
+  margin: 0 1vw;
 }
 
 section.resume {
