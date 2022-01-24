@@ -1,0 +1,66 @@
+.projects{
+    @include flexBox(space-around);
+    flex-direction: column;
+
+    .project{        
+        @include flexBox(space-around);
+        
+        background-color: $colorBackground;
+        border: 2px solid $colorPrimary;
+        padding: 0;
+        max-width: 900px;
+        border-radius: 5px;
+        margin: 5vh 5vw;
+
+        &:hover{
+            transform: translate(2px, 2px);            
+            transition: all 0.2s ease-in-out;
+            border-width: 3px;
+        }
+
+        h2{
+            border-bottom: 3px solid $colorPrimary;
+            padding: 0;
+            margin: 2vh 2vw;
+            text-align: center;
+
+            @media screen and (max-width: $screenSmall){
+                margin: 0.5vh 0.5vw;
+            }
+        }
+
+        p{
+            padding: 0;
+            margin: 2vh auto;
+            width: 90%;
+            color: $colorText;
+        }
+
+
+        svg{
+            fill: $colorBackground;
+            background-color: $colorPrimary;          
+        
+            height: calc(90px + 3vw);
+            width: auto;    
+
+            @media screen and (max-width: $screenSmall){
+                display: none;
+            }
+        }
+
+        .proj-descr{
+            width: 70%;
+
+            @media screen and (max-width: $screenSmall){
+                width: 85%;
+            }
+        }        
+    }
+}
+
+p.instructions{
+    font-size: $fontXSmall;
+    text-align: center;
+}
+

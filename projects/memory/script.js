@@ -50,10 +50,10 @@ const cardsArray = [
     }
 ]
 
-const game = document.getElementById('game')
+const game = document.getElementById('project-memory')
 const grid = document.createElement('section')
 grid.setAttribute('class', 'grid')
-game.appendChild(grid)
+game.prepend(grid)
 
 let count = 0;
 let firstGuess = '';
@@ -74,7 +74,7 @@ gameGrid.forEach((item) => {
     const back = document.createElement('div');
     back.classList.add('back');
     back.style.backgroundImage = `url(${item.img})`;
-
+    
     grid.appendChild(card);
     card.appendChild(front);
     card.appendChild(back);
@@ -82,10 +82,13 @@ gameGrid.forEach((item) => {
 
 grid.addEventListener('click', function (event) {
     let clicked = event.target;
-    if (clicked.nodeName === 'SECTION' || clicked === previousTarget)
-        return;
+    
+    if(clicked.nodeName === 'SECTION') return;
+    if(clicked === previousTarget) return;
+    if(clicked.classList.contains("match")) return;
+    if(!clicked.classList.contains("front")) return;
 
-    previousTarget = clicked;
+    previousTarget = (previousTarget === null) ? clicked : null;
 
     switch (count) { 
         case 0:
@@ -99,6 +102,7 @@ grid.addEventListener('click', function (event) {
             count++;
             setTimeout(match, 1200);
             setTimeout(resetGuesses, 1200);
+            setTimeout(checkForVictory, 1400);
             break;
         default:
             break;
@@ -124,3 +128,17 @@ const resetGuesses = () => {
         card.classList.remove('selected')
     })
 }
+
+const checkForVictory = () => {   
+    if(document.querySelectorAll(".match").length !== (cardsArray.length * 2)) return;
+
+    // Victory!
+    let victory = document.createElement("h1");
+    victory.textContent = "Congrats.... YOU WON!!!"
+    victory.classList.add("intro")
+    victory.addEventListener("click", () => {
+        location.reload();
+    })
+    game.prepend(victory);
+}
+

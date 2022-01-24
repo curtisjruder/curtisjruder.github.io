@@ -2,195 +2,26 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>Mine Sweeper</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            text-align: center;
-        }
-        #game{
-            display: grid;
-            grid-template-columns: repeat(10,50px);
-            grid-template-rows: repeat(10, 50px);
-            justify-content: center;   
-            align-content: center;  
-        }
-        
-        #end{
-            font-size: 10vh;
-        }
-        .cell{        
-            padding-top: 15px;
-            border: 1px solid black;
-            font-size: 20px;
-            text-align: center;
-        }
-        .mine{
-            background-color: red;
-        }
-        .clearedmine{
-            background-color: black;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Minesweeper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="./script.js" defer></script>
+    <script src="/components/NavBar.js"></script>
+    <script src="/components/Footer.js"></script>    
+    <script src="/components/BackGround.js"></script>  
 </head>
 <body>
-    <h1>Mine Sweeper</h1>
-    <p>The grid is a mine field which you must clear.  Find the mines by clicking through and using your superior deductive abilities!</p>
-    <p>Instructions:  Left click to uncover the cell / Right click to identify a mine</p>
-    
-    <div id="game"></div>
-    <div id="end"></div>
-
-    <script>
-        let minefield = [];
-        const gridSize = 10;
-        
-        // document.addEventListener('contextmenu', function(e) {e.preventDefault();});
-        setupNewGame();
-
-        function setupNewGame(){
-            document.getElementById("end").textContent = "";
-
-            clearGridCells()
-            setupGridCells()
-            generateSolution()            
-        }
-
-        function setupGridCells(){
-            // Creates a grid based upon const gridSize and adds the appropriate event listeners
-            var iMax = gridSize * gridSize;
-            for(var i = 0; i < iMax; i++){
-                let x = document.createElement("div");
-                x.setAttribute('id', i)
-                x.setAttribute('class','cell')
-                x.textContent = "*"
-                x.addEventListener("mouseup",btnClick)
-                x.addEventListener('contextmenu', function(e) {e.preventDefault();});
-                document.getElementById("game").append(x);
-            }
-        }
-
-        function clearGridCells(){           
-            while(document.getElementsByClassName('cell').length > 0)
-            document.getElementsByClassName('cell')[0].remove()
-        }
-
-        
-
-        function generateSolution(){
-            var cnt = 0;
-            var cellCnt = document.getElementsByClassName('cell').length;
-            var maxCnt = Math.round((1+Math.random())*0.1*cellCnt);
-            minefield = [];
-            
-            do{            
-                var val = Math.floor((Math.random()*100));
-                if(!hasLocation(val)){
-                    minefield.push(val)
-                    cnt++
-                }                
-            } while(cnt < maxCnt);
-        }
-
-        function btnClick(e){            
-            if(isGameOver()){
-                setupNewGame()
-                return;
-            }
-
-            if((e.which && e.which == 1) || (e.button && e.button == 0)){        
-                if(document.getElementById(this.id).attributes["class"].value == 'cell clearedmine') return;
-                cellClick(this.id);
-            }
-            else
-                toggleColor(this.id);            
-        }
-
-        function toggleColor(id){
-            let x = document.getElementById(id)
-            x.setAttribute('class',x.attributes["class"].value=='cell' ? 'cell clearedmine' : 'cell');
-        }
-        
-
-        function cellClick(i){            
-            if(hasLocation(i)){
-                document.getElementById("end").textContent = "You Lose!"
-                fillSolution();
-            }                
-            else{
-                checkNeighborhood(i);
-                checkIfComplete();
-            }
-        }
-
-        function checkIfComplete(){
-            var iMax = gridSize * gridSize;
-            for(var i = 0; i < iMax; i++)
-                if(isInitialValue(i) && !hasLocation(i)) return;
-
-                document.getElementById("end").textContent = "WINNER!!!";
-        }
-
-        function isGameOver(){
-            return document.getElementById("end").textContent != "";
-        }
-
-        function hasLocation(xKey){
-            for(i=0; i < minefield.length; i++)
-                if(minefield[i] == xKey) return true
-
-            return false;
-        }
-
-        function fillSolution(){            
-            for(i=0; i < minefield.length; i++)
-            {
-                let x = document.getElementById(minefield[i])
-                x.textContent = "X"
-                x.setAttribute('class','cell mine')
-            }
-        }
-
-        function checkNeighborhood(id)
-        {
-
-            let xCell = document.getElementById(id)
-            var iR = Math.floor(id / gridSize);
-            var iSt = Math.max(iR - 1, 0);
-            var iEnd = Math.min(iR + 1, gridSize -1);
-
-            var iC = id % gridSize;
-            var jSt = Math.max(iC - 1, 0);
-            var jEnd = Math.min(iC + 1, gridSize-1);
-
-            var cnt = 0;
-            for(var i=iSt; i <=iEnd;i++)
-                for(var j = jSt; j <= jEnd; j++)
-                    if (hasLocation(i * gridSize + j)) cnt++;
-
-            if(cnt == 0)
-            {
-                xCell.textContent="";
-                for(var i=iSt; i <=iEnd;i++)
-                    for(var j = jSt; j <= jEnd; j++)
-                        if (isInitialValue(i*gridSize+j)) checkNeighborhood(i*gridSize+j);
-            }
-
-            else if(isInitialValue(id))
-            {
-                xCell.textContent = cnt;
-            }            
-        }
-        
-        function isInitialValue(id){
-            let x = document.getElementById(id);
-
-            if (x.textContent == '*') return true;
-            return false;
-        }        
-    </script>
+    <nav-bar></nav-bar>
+    <main>
+    <h1 id="project-label">Mine Sweeper</h1>
+    <p class="instructions">The grid is a mine field which you must clear.  Find the mines by clicking through and using your superior deductive abilities!</p>
+    <p class="instructions">Instructions:  Left click to uncover the cell / Right click to identify a mine</p>
+    <div id="project-minesweeper"></div>
+    </main>
+    <back-ground></back-ground>
+    <footer-comp></footer-comp> 
 </body>
 </html>

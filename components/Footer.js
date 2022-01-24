@@ -11,9 +11,9 @@ class Footer extends HTMLElement{
         return `           
         <footer>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="resume.html">Resume</a></li>                    
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>                    
+            <li><a href="/projects.html">Projects</a></li>
             <li><a href="mailto:curtis@cjruder.net">Contact</a></li>
           </ul>
           <ul class="social-row">

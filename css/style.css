@@ -83,7 +83,7 @@ nav-bar .menu h2:hover {
 
 nav-bar .menu svg {
   margin-left: 2.5vw;
-  height: calc(2vw + 20px);
+  height: calc(0.8vw + 30px);
   width: auto;
   border: none;
   max-height: 80%;
@@ -546,6 +546,281 @@ div.experience .role-responsibility li {
 
 div.experience .role-responsibility li:not(:first-child) {
   margin-top: 1vh;
+}
+
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.projects .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #201A1A;
+  border: 2px solid #2ae7e7;
+  padding: 0;
+  max-width: 900px;
+  border-radius: 5px;
+  margin: 5vh 5vw;
+}
+
+.projects .project:hover {
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-width: 3px;
+}
+
+.projects .project h2 {
+  border-bottom: 3px solid #2ae7e7;
+  padding: 0;
+  margin: 2vh 2vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .projects .project h2 {
+    margin: 0.5vh 0.5vw;
+  }
+}
+
+.projects .project p {
+  padding: 0;
+  margin: 2vh auto;
+  width: 90%;
+  color: #dbdbdb;
+}
+
+.projects .project svg {
+  fill: #201A1A;
+  background-color: #2ae7e7;
+  height: calc(90px + 3vw);
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .projects .project svg {
+    display: none;
+  }
+}
+
+.projects .project .proj-descr {
+  width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+  .projects .project .proj-descr {
+    width: 85%;
+  }
+}
+
+p.instructions {
+  font-size: calc(0.1vw + 14px);
+  text-align: center;
+}
+
+#project-memory .grid {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#project-memory .card {
+  position: relative;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin: 5px;
+}
+
+#project-memory .card,
+#project-memory .back,
+#project-memory .front {
+  height: 160px;
+  width: 160px;
+}
+
+@media screen and (max-width: 1200px) {
+  #project-memory .card,
+  #project-memory .back,
+  #project-memory .front {
+    height: calc((100vw - 9rem) / 6);
+    width: calc((100vw - 9rem) / 6);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #project-memory .card,
+  #project-memory .back,
+  #project-memory .front {
+    height: calc((100vw - 9rem) / 4);
+    width: calc((100vw - 9rem) / 4);
+  }
+}
+
+#project-memory .back,
+#project-memory .front {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+#project-memory .front {
+  z-index: 2;
+  background-color: #201A1A;
+  border: 5px solid #2ae7e7;
+}
+
+#project-memory .front:hover {
+  background-color: #2ae7e7;
+}
+
+@media screen and (max-width: 1000px) {
+  #project-memory .front {
+    border-width: 3px;
+  }
+  #project-memory .front:hover {
+    background-color: #201A1A;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #project-memory .front {
+    border-width: 2px;
+  }
+}
+
+#project-memory .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#project-memory .selected {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+#project-memory .match .front {
+  background: transparent;
+  border: none;
+}
+
+#project-memory p.thanks {
+  font-size: calc(0.15vw + 10px);
+  text-align: center;
+}
+
+#project-minesweeper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (60px)[10];
+      grid-template-columns: repeat(10, 60px);
+  -ms-grid-rows: (60px)[10];
+      grid-template-rows: repeat(10, 60px);
+}
+
+@media screen and (max-width: 1000px) {
+  #project-minesweeper {
+    -ms-grid-columns: (45px)[10];
+        grid-template-columns: repeat(10, 45px);
+    -ms-grid-rows: (45px)[10];
+        grid-template-rows: repeat(10, 45px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #project-minesweeper {
+    -ms-grid-columns: (30px)[10];
+        grid-template-columns: repeat(10, 30px);
+    -ms-grid-rows: (30px)[10];
+        grid-template-rows: repeat(10, 30px);
+  }
+}
+
+#project-minesweeper .cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #201A1A;
+  font-size: calc(0.2vw + 16.5px);
+  background-color: #2ae7e7;
+  color: #201A1A;
+}
+
+@media screen and (max-width: 1000px) {
+  #project-minesweeper .cell {
+    font-size: calc(0.1vw + 14px);
+  }
+}
+
+#project-minesweeper .mine {
+  background-color: #201A1A;
+  color: #db8f71;
+  border-color: #db8f71;
+}
+
+#project-minesweeper .clearedmine {
+  background-color: #201A1A;
+}
+
+#particles {
+  position: fixed;
+  top: 4rem;
+  z-index: -10;
+  left: 0;
+  height: calc(100% - 8rem);
+  width: 100vw;
+  background-color: #201A1A;
+  color: #2ae7e7;
 }
 
 h5, h6 {

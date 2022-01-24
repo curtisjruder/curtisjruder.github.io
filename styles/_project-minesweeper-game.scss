@@ -1,0 +1,39 @@
+#project-minesweeper{   
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+    grid-template-rows: repeat(10, 60px);
+
+    @media screen and (max-width: $screenMed){
+        grid-template-columns: repeat(10, 45px);
+        grid-template-rows: repeat(10, 45px);
+    }
+
+    @media screen and (max-width: $screenSmall){
+        grid-template-columns: repeat(10, 30px);
+        grid-template-rows: repeat(10, 30px);
+    }
+ 
+    .cell{        
+        @include flexBox(center);
+        
+        border: 1px solid $colorBackground;        
+        font-size: $fontSmall;        
+        background-color: $colorPrimary;
+        color: $colorBackground;
+
+        @media screen and (max-width: $screenMed){
+            font-size: $fontXSmall;
+        }
+    }
+
+    .mine{
+        background-color: $colorBackground;
+        color: $colorSecond;
+        border-color: $colorSecond;
+    }
+    .clearedmine{
+        background-color: $colorBackground;
+    } 
+}
+
+

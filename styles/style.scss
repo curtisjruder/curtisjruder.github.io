@@ -4,6 +4,10 @@
 @import "./navbar";
 @import "./footer";
 @import "./resume";
+@import "./projects";
+@import "./project-memory-game";
+@import "./project-minesweeper-game";
+@import "./project-particles-canvas";
 
 // MIX IN DEFINITIONS
 @mixin flexCenter{
