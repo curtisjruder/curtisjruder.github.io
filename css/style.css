@@ -911,7 +911,7 @@ div.selector .on {
   position: absolute;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  border: 15px solid #2ae7e7;
+  border: 10px double #2ae7e7;
 }
 
 #project-coin-flip .head {
@@ -977,6 +977,96 @@ div.selector .on {
     -webkit-transform: rotateX(1980deg);
             transform: rotateX(1980deg);
   }
+}
+
+#project-sudoku {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (190px)[3];
+      grid-template-columns: repeat(3, 190px);
+  -ms-grid-rows: (190px)[3];
+      grid-template-rows: repeat(3, 190px);
+}
+
+@media screen and (max-width: 1000px) {
+  #project-sudoku {
+    -ms-grid-columns: (145px)[3];
+        grid-template-columns: repeat(3, 145px);
+    -ms-grid-rows: (145px)[3];
+        grid-template-rows: repeat(3, 145px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #project-sudoku {
+    -ms-grid-columns: (113px)[3];
+        grid-template-columns: repeat(3, 113px);
+    -ms-grid-rows: (113px)[3];
+        grid-template-rows: repeat(3, 113px);
+  }
+}
+
+#project-sudoku input {
+  color: #201A1A;
+  border: 1px solid #201A1A;
+  background-color: #2ae7e7;
+  margin: 1px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(0.2vw + 16.5px);
+}
+
+#project-sudoku input:invalid {
+  color: #db8f71;
+  border-color: #db8f71;
+}
+
+@media screen and (max-width: 600px) {
+  #project-sudoku input {
+    font-size: calc(0.1vw + 14px);
+  }
+}
+
+#project-sudoku .inputGroup {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (60px)[3];
+      grid-template-columns: repeat(3, 60px);
+  -ms-grid-rows: (60px)[3];
+      grid-template-rows: repeat(3, 60px);
+}
+
+@media screen and (max-width: 1000px) {
+  #project-sudoku .inputGroup {
+    -ms-grid-columns: (45px)[3];
+        grid-template-columns: repeat(3, 45px);
+    -ms-grid-rows: (45px)[3];
+        grid-template-rows: repeat(3, 45px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #project-sudoku .inputGroup {
+    -ms-grid-columns: (35px)[3];
+        grid-template-columns: repeat(3, 35px);
+    -ms-grid-rows: (35px)[3];
+        grid-template-rows: repeat(3, 35px);
+  }
+}
+
+#project-sudoku .wrong {
+  background-color: #db8f71;
+  color: #201A1A;
+  border-color: #201A1A;
+}
+
+#project-sudoku .readonly {
+  color: #dbdbdb;
+  background-color: transparent;
+  border-color: #2ae7e7;
+  font-size: calc(0.1vw + 14px);
 }
 
 h5, h6 {

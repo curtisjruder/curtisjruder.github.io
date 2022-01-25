@@ -10,7 +10,7 @@
     svg{
       width: 75%;
       height: 75%;
-      fill: $colorPrimary;
+      fill: $colorPrimary;                  
     }
 
     .side{
@@ -21,7 +21,7 @@
       border-radius: 50%;
       position: absolute;
       backface-visibility: hidden;
-      border: 15px solid $colorPrimary;
+      border: 10px double $colorPrimary;
     }
 
     .head {

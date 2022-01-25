@@ -1,0 +1,73 @@
+
+#project-sudoku{
+    $gridSmall: 35px;
+    $gridMed: 45px;
+    $gridLarge: 60px;
+
+    $gridSmallX: calc($gridSmall * 3);
+    $gridLargeX: calc($gridLarge * 3);
+
+    display: grid;
+    grid-template-columns: repeat(3, 190px);
+    grid-template-rows: repeat(3, 190px);
+
+    @media screen and (max-width: $screenMed){
+        grid-template-columns: repeat(3, 145px);
+        grid-template-rows: repeat(3, 145px);
+    }
+
+    @media screen and (max-width: $screenSmall){
+        grid-template-columns: repeat(3, 113px);
+        grid-template-rows: repeat(3, 113px);
+    }
+
+    input{
+        color: $colorBackground;
+        border: 1px solid $colorBackground;
+        background-color: $colorPrimary;
+        margin: 1px;
+        text-align: center;
+        justify-content: center;
+
+        font-size: $fontSmall;
+
+        &:invalid{
+            color: $colorSecond;
+            border-color: $colorSecond;
+        }
+
+        @media screen and (max-width: $screenSmall){
+            font-size: $fontXSmall;
+        }
+    }
+    
+    .inputGroup{
+        display: grid;
+         
+        grid-template-columns: repeat(3, $gridLarge);
+        grid-template-rows: repeat(3, $gridLarge);
+
+        @media screen and (max-width: $screenMed){
+            grid-template-columns: repeat(3, $gridMed);
+            grid-template-rows: repeat(3, $gridMed);
+        }
+
+        @media screen and (max-width: $screenSmall){
+            grid-template-columns: repeat(3, $gridSmall);
+            grid-template-rows: repeat(3, $gridSmall);
+        }
+    }
+
+    .wrong{
+        background-color: $colorSecond;
+        color: $colorBackground;
+        border-color: $colorBackground;
+    }
+
+    .readonly{
+        color: $colorText;
+        background-color: transparent;
+        border-color: $colorPrimary;
+        font-size: $fontXSmall;
+    }
+}
