@@ -621,6 +621,7 @@ div.experience .role-responsibility li:not(:first-child) {
 .projects .project svg {
   fill: #201A1A;
   background-color: #2ae7e7;
+  border-radius: 50%;
   height: calc(90px + 3vw);
   width: auto;
 }

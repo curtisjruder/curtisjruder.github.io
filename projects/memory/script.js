@@ -85,7 +85,7 @@ grid.addEventListener('click', function (event) {
     
     if(clicked.nodeName === 'SECTION') return;
     if(clicked === previousTarget) return;
-    if(clicked.classList.contains("match")) return;
+    if(clicked.parentNode.classList.contains("match")) return;
     if(!clicked.classList.contains("front")) return;
 
     previousTarget = (previousTarget === null) ? clicked : null;
