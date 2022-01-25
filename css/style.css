@@ -768,10 +768,10 @@ p.instructions {
 
 @media screen and (max-width: 600px) {
   #project-minesweeper {
-    -ms-grid-columns: (30px)[10];
-        grid-template-columns: repeat(10, 30px);
-    -ms-grid-rows: (30px)[10];
-        grid-template-rows: repeat(10, 30px);
+    -ms-grid-columns: (33px)[10];
+        grid-template-columns: repeat(10, 33px);
+    -ms-grid-rows: (33px)[10];
+        grid-template-rows: repeat(10, 33px);
   }
 }
 
