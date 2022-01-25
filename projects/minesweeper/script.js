@@ -1,6 +1,8 @@
 let minefield = [];
 const gridSize = 10;
 
+let toggleVisible = window.innerWidth < 600;
+
 // document.addEventListener('contextmenu', function(e) {e.preventDefault();});
 setupNewGame();
 
@@ -54,7 +56,9 @@ function btnClick(e){
         return;
     }
 
-    if((e.which && e.which == 1) || (e.button && e.button == 0)){        
+    let leftClick = getLeftClick(e);
+    
+    if(leftClick){        
         if(document.getElementById(this.id).attributes["class"].value == 'cell clearedmine') return;
         cellClick(this.id);
     }
@@ -62,9 +66,20 @@ function btnClick(e){
         toggleColor(this.id);            
 }
 
+function getLeftClick(e){
+    if(toggleVisible){
+        return document.getElementById("selector-on").classList.contains("on");
+    }
+    else{
+        return (e.which && e.which == 1) || (e.button && e.button == 0);
+    }
+}
+
 function toggleColor(id){
-    let x = document.getElementById(id)
-    x.setAttribute('class',x.attributes["class"].value=='cell' ? 'cell clearedmine' : 'cell');
+    let x = document.getElementById(id)    
+    if (x.textContent !== "*" && !x.classList.contains("clearedmine")) return;
+    x.classList.toggle("clearedmine")
+    //x.setAttribute('class',x.attributes["class"].value=='cell' ? 'cell clearedmine' : 'cell');
 }
 
 
@@ -144,3 +159,9 @@ function isInitialValue(id){
     if (x.textContent == '*') return true;
     return false;
 }     
+
+
+document.querySelector(".selector").addEventListener("click", (event) => {
+    document.querySelectorAll(".toggle").forEach((itm) => {itm.classList.toggle("on")})
+})
+

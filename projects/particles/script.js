@@ -12,7 +12,7 @@ let rgb = color.substring(4,color.length - 1);
 const mouse = {
     x: undefined,
     y: undefined,
-    radius: 150 //canvas.height * canvas.width / 10000
+    radius: (canvas.height * canvas.width / 18000 + 60)
 }
 
 window.addEventListener("mousemove", (event) => {

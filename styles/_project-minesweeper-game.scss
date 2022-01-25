@@ -32,8 +32,37 @@
         border-color: $colorSecond;
     }
     .clearedmine{
-        background-color: $colorBackground;
+        background-color: transparent;
+        color: transparent;
     } 
 }
 
+div.selector{   
+    
+    display: none;
+
+    @media screen and (max-width: $screenMed){
+        @include flexBox(space-around);
+    }
+
+    margin: 2vh 1vw;
+    #selector-on{
+        fill: $colorPrimary;
+    }
+
+    #selector-off{
+        fill: $colorSecond;
+    }
+
+    .toggle{
+        margin-left: 1vw;
+        display: none;        
+    }
+
+    .on{
+        display: block;
+    }
+
+
+}
 
