@@ -812,6 +812,9 @@ p.instructions {
 #project-minesweeper .clearedmine {
   background-color: transparent;
   color: transparent;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border: none;
 }
 
 div.selector {

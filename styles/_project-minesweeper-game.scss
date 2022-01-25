@@ -31,10 +31,14 @@
         color: $colorSecond;
         border-color: $colorSecond;
     }
+
     .clearedmine{
         background-color: transparent;
         color: transparent;
+        transition: all 0.1s ease-in-out;
+        border: none;
     } 
+    
 }
 
 div.selector{   
@@ -62,7 +66,5 @@ div.selector{
     .on{
         display: block;
     }
-
-
 }
 

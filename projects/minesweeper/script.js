@@ -7,7 +7,7 @@ let toggleVisible = window.innerWidth < 600;
 setupNewGame();
 
 function setupNewGame(){
-    document.getElementById("project-label").textContent = "Mine Sweeper";
+    document.getElementById("result").textContent = "";
 
     clearGridCells()
     setupGridCells()
@@ -78,14 +78,13 @@ function getLeftClick(e){
 function toggleColor(id){
     let x = document.getElementById(id)    
     if (x.textContent !== "*" && !x.classList.contains("clearedmine")) return;
-    x.classList.toggle("clearedmine")
-    //x.setAttribute('class',x.attributes["class"].value=='cell' ? 'cell clearedmine' : 'cell');
+    x.classList.toggle("clearedmine")    
 }
 
 
 function cellClick(i){            
     if(hasLocation(i)){
-        document.getElementById("project-label").textContent = "You Lose!"
+        document.getElementById("result").textContent = "You Lose!"
         fillSolution();
     }                
     else{
@@ -98,12 +97,13 @@ function checkIfComplete(){
     var iMax = gridSize * gridSize;
     for(var i = 0; i < iMax; i++)
         if(isInitialValue(i) && !hasLocation(i)) return;
-
-        document.getElementById("project-label").textContent = "WINNER!!!";
+      
+    
+    document.getElementById("result").textContent = "WINNER!!!";
 }
 
 function isGameOver(){
-    return document.getElementById("project-label").textContent !== "Mine Sweeper";
+    return document.getElementById("result").textContent !== "";
 }
 
 function hasLocation(xKey){
@@ -122,9 +122,7 @@ function fillSolution(){
     }
 }
 
-function checkNeighborhood(id)
-{
-
+function checkNeighborhood(id){
     let xCell = document.getElementById(id)
     var iR = Math.floor(id / gridSize);
     var iSt = Math.max(iR - 1, 0);
@@ -139,16 +137,13 @@ function checkNeighborhood(id)
         for(var j = jSt; j <= jEnd; j++)
             if (hasLocation(i * gridSize + j)) cnt++;
 
-    if(cnt == 0)
-    {
+    if(cnt == 0){
         xCell.textContent="";
         for(var i=iSt; i <=iEnd;i++)
             for(var j = jSt; j <= jEnd; j++)
                 if (isInitialValue(i*gridSize+j)) checkNeighborhood(i*gridSize+j);
     }
-
-    else if(isInitialValue(id))
-    {
+    else if(isInitialValue(id)){
         xCell.textContent = cnt;
     }            
 }
