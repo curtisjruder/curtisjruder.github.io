@@ -869,6 +869,116 @@ div.selector .on {
   color: #2ae7e7;
 }
 
+#project-coin-flip {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 1s ease-in;
+  transition: -webkit-transform 1s ease-in;
+  transition: transform 1s ease-in;
+  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#project-coin-flip svg {
+  width: 75%;
+  height: 75%;
+  fill: #2ae7e7;
+}
+
+#project-coin-flip .side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 15px solid #2ae7e7;
+}
+
+#project-coin-flip .head {
+  background-color: #201A1A;
+  z-index: 10;
+}
+
+#project-coin-flip .tail {
+  background-color: #201A1A;
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+#project-coin-flip.flipHead {
+  -webkit-animation: resultHead 2s ease-out forwards;
+          animation: resultHead 2s ease-out forwards;
+}
+
+#project-coin-flip.flipTail {
+  -webkit-animation: resultTail 2s ease-out forwards;
+          animation: resultTail 2s ease-out forwards;
+}
+
+@-webkit-keyframes resultHead {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(1800deg);
+            transform: rotateX(1800deg);
+  }
+}
+
+@keyframes resultHead {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(1800deg);
+            transform: rotateX(1800deg);
+  }
+}
+
+@-webkit-keyframes resultTail {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(1980deg);
+            transform: rotateX(1980deg);
+  }
+}
+
+@keyframes resultTail {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateX(1980deg);
+            transform: rotateX(1980deg);
+  }
+}
+
 h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1036,4 +1146,8 @@ main p {
   main p.intro {
     display: none;
   }
+}
+
+.hidden {
+  display: none;
 }

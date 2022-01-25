@@ -1,13 +1,16 @@
 let minefield = [];
 const gridSize = 10;
 
-let toggleVisible = window.innerWidth < 600;
+let toggleVisible = window.innerWidth < 1000;
 
 // document.addEventListener('contextmenu', function(e) {e.preventDefault();});
 setupNewGame();
 
 function setupNewGame(){
     document.getElementById("result").textContent = "";
+    if(toggleVisible){
+        document.querySelectorAll(".instructions").forEach((itm)=> {itm.classList.add("hidden")})
+    }
 
     clearGridCells()
     setupGridCells()

@@ -60,6 +60,9 @@ let firstGuess = '';
 let secondGuess = '';
 let previousTarget = null;
 
+let timeDelay = 900;
+let lastTime;
+
 let gameGrid = cardsArray.concat(cardsArray);
 gameGrid.sort(() => 0.5 - Math.random());
 
@@ -81,12 +84,18 @@ gameGrid.forEach((item) => {
 })
 
 grid.addEventListener('click', function (event) {
+    // My kids rapid fire the screen on mobile so this was necessary
+    let timer = new Date().getTime();
+    if ((timer - lastTime) < (timeDelay*1.03) && previousTarget === null) return;
+
     let clicked = event.target;
     
     if(clicked.nodeName === 'SECTION') return;
     if(clicked === previousTarget) return;
     if(clicked.parentNode.classList.contains("match")) return;
     if(!clicked.classList.contains("front")) return;
+
+    lastTime = timer;
 
     previousTarget = (previousTarget === null) ? clicked : null;
 
@@ -100,9 +109,9 @@ grid.addEventListener('click', function (event) {
             secondGuess = clicked.parentNode.dataset.name;
             clicked.parentNode.classList.add('selected');
             count++;
-            setTimeout(match, 1200);
-            setTimeout(resetGuesses, 1200);
-            setTimeout(checkForVictory, 1400);
+            setTimeout(match, timeDelay);
+            setTimeout(resetGuesses, timeDelay);
+            setTimeout(checkForVictory, timeDelay*1.03);
             break;
         default:
             break;

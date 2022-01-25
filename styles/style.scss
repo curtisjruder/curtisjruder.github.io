@@ -8,6 +8,7 @@
 @import "./project-memory-game";
 @import "./project-minesweeper-game";
 @import "./project-particles-canvas";
+@import "./_project-coinflip";
 
 // MIX IN DEFINITIONS
 @mixin flexCenter{
@@ -161,5 +162,9 @@ main{
             }
         }
     }
+}
+
+.hidden{
+    display: none;
 }
 
