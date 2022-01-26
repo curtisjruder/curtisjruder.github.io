@@ -60,10 +60,11 @@ setInitialMode();
 function setInitialMode(){
     let mode = localStorage.getItem("light-mode")
 
-    if(mode === null || mode === "off")
-        document.getElementById("light-mode-on").classList.add("hidden");
-    else
-        document.getElementById("light-mode-off").classList.add("hidden");
+    if(mode === null || mode === "off"){
+        document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
+            itm.classList.toggle("hidden")
+        })
+    }
 
     checkColor();
 }
