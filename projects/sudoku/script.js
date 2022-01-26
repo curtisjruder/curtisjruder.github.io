@@ -46,7 +46,10 @@ function valueChange(e){
                     
     let val = itm.value;
 
-    if(val === "" || val == puzzleSolution[i][j]){
+    if(val === "") {
+        itm.classList.remove("wrong")
+    }
+    else if(val == puzzleSolution[i][j]){
         itm.classList.remove("wrong")
         itm.classList.add("readonly")
         itm.readOnly = true;
