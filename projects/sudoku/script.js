@@ -48,6 +48,8 @@ function valueChange(e){
 
     if(val === "" || val == puzzleSolution[i][j]){
         itm.classList.remove("wrong")
+        itm.classList.add("readonly")
+        itm.readOnly = true;
         checkForWin();
     }
     else{

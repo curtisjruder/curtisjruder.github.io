@@ -1,24 +1,21 @@
 
 #project-sudoku{
-    $gridSmall: 35px;
+    $gridSmall: 30px;
     $gridMed: 45px;
     $gridLarge: 60px;
-
-    $gridSmallX: calc($gridSmall * 3);
-    $gridLargeX: calc($gridLarge * 3);
 
     display: grid;
     grid-template-columns: repeat(3, 190px);
     grid-template-rows: repeat(3, 190px);
 
     @media screen and (max-width: $screenMed){
-        grid-template-columns: repeat(3, 145px);
-        grid-template-rows: repeat(3, 145px);
+        grid-template-columns: repeat(3, 142px);
+        grid-template-rows: repeat(3, 142px);
     }
 
     @media screen and (max-width: $screenSmall){
-        grid-template-columns: repeat(3, 113px);
-        grid-template-rows: repeat(3, 113px);
+        grid-template-columns: repeat(3, 94px);
+        grid-template-rows: repeat(3, 94px);
     }
 
     input{

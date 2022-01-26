@@ -58,10 +58,16 @@ function checkColor(){
 setInitialMode();
 
 function setInitialMode(){
-    let mode = localStorage.getItem("lightMode")
-    if(mode === null) mode = sessionStorage.getItem("lightMode");
+    let mode = getSessionSetting();
     
-    if(mode === null || mode === "off"){
+    if(mode === null){ // no cookies
+        document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
+            itm.classList.add("hidden")
+        })        
+        return;        
+    }
+
+    if(mode === "off"){
         document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
             itm.classList.toggle("hidden")
         })
@@ -72,4 +78,16 @@ function setInitialMode(){
 
 function isLightMode(){
     return document.getElementById("light-mode-off").classList.contains("hidden")
+}
+
+function getSessionSetting(){
+    let mode = localStorage.getItem("lightMode")
+    if(mode === null) mode = sessionStorage.getItem("lightMode");
+
+    if(mode !== null) return mode;
+
+    localStorage.setItem("lightMode", "off")
+    sessionStorage.setItem("lightMode", "off")
+
+    return localStorage.getItem("lightMode")
 }

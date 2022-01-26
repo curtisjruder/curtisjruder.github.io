@@ -127,9 +127,24 @@ nav-bar .menu-options {
 }
 
 nav-bar .menu-options .lightmode {
-  width: 30px;
-  height: auto;
+  width: calc(0.7vw + 18px);
+  height: 100%;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav-bar .menu-options .lightmode svg {
@@ -1037,19 +1052,19 @@ div.selector .on {
 
 @media screen and (max-width: 1000px) {
   #project-sudoku {
-    -ms-grid-columns: (145px)[3];
-        grid-template-columns: repeat(3, 145px);
-    -ms-grid-rows: (145px)[3];
-        grid-template-rows: repeat(3, 145px);
+    -ms-grid-columns: (142px)[3];
+        grid-template-columns: repeat(3, 142px);
+    -ms-grid-rows: (142px)[3];
+        grid-template-rows: repeat(3, 142px);
   }
 }
 
 @media screen and (max-width: 600px) {
   #project-sudoku {
-    -ms-grid-columns: (113px)[3];
-        grid-template-columns: repeat(3, 113px);
-    -ms-grid-rows: (113px)[3];
-        grid-template-rows: repeat(3, 113px);
+    -ms-grid-columns: (94px)[3];
+        grid-template-columns: repeat(3, 94px);
+    -ms-grid-rows: (94px)[3];
+        grid-template-rows: repeat(3, 94px);
   }
 }
 
@@ -1096,10 +1111,10 @@ div.selector .on {
 
 @media screen and (max-width: 600px) {
   #project-sudoku .inputGroup {
-    -ms-grid-columns: (35px)[3];
-        grid-template-columns: repeat(3, 35px);
-    -ms-grid-rows: (35px)[3];
-        grid-template-rows: repeat(3, 35px);
+    -ms-grid-columns: (30px)[3];
+        grid-template-columns: repeat(3, 30px);
+    -ms-grid-rows: (30px)[3];
+        grid-template-rows: repeat(3, 30px);
   }
 }
 

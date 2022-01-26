@@ -59,19 +59,23 @@ nav-bar{
     .menu-options{
         @include flexBox(center);
         //width: 150px;
+
         padding: 0;
         margin: 0;
         height: 100%;
 
         .lightmode{
-            width: 30px;
-            height: auto;
+            width: calc(0.7vw + 18px);
+            height: 100%;
             cursor: pointer;
+
+            @include flexBox(center);
 
             svg{
                 width: 100%;
                 height: 100%;
                 margin: 0;
+                
 
                 &:hover{
                     transition: all 0.3s ease-in-out;
