@@ -60,18 +60,10 @@ setInitialMode();
 function setInitialMode(){
     let mode = getSessionSetting();
     
-    if(mode === null){ // no cookies
-        document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
-            itm.classList.add("hidden")
-        })        
-        return;        
-    }
+    if(mode === null) return; // no cookies            
 
-    if(mode === "off"){
-        document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
-            itm.classList.toggle("hidden")
-        })
-    }
+    let svgID = mode === "off" ? "light-mode-off" : "light-mode-on";
+    document.getElementById(svgID).classList.remove("hidden")
 
     checkColor();
 }
