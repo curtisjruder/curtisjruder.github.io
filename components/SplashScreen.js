@@ -4,7 +4,7 @@ class SplashScreen extends HTMLElement{
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(this.getTemplate().content);
-        setTimeout(()=>{this.classList.add("splash-complete")},2000)
+        setTimeout(()=>{this.classList.add("splash-complete")},2500)
     }
 
     connectedCallback() {
@@ -235,7 +235,7 @@ class SplashScreen extends HTMLElement{
                     width: 500vw;
                     left: -200vw;
                     top: -200vh;
-                    transition: all 0.7s ease-in-out;
+                    transition: all 1s ease-in-out;
                 }
             </style> 
 
