@@ -1,5 +1,5 @@
 function setInitialMode(){
-    let mode = localStorage.getItem("light-mode")
+    let mode = localStorage.getItem("lightMode")
 
     if(mode === null || mode === "off") return
 

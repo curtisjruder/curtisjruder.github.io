@@ -32,8 +32,8 @@ document.querySelector(".lightmode").addEventListener("click", ()=>{
     })
 
     let setting = isLightMode() ? "on" : "off";
-    localStorage.setItem("light-mode",setting)
-    alert("localstorage=  " + localStorage.getItem("light-mode"))
+    localStorage.setItem("lightMode",setting)
+    alert("localstorage=  " + localStorage.getItem("lightMode"))
     checkColor();
 })
 
@@ -59,7 +59,7 @@ function checkColor(){
 setInitialMode();
 
 function setInitialMode(){
-    let mode = localStorage.getItem("light-mode")
+    let mode = localStorage.getItem("lightMode")
 
     if(mode === null || mode === "off"){
         document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
