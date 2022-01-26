@@ -4,6 +4,7 @@ class SplashScreen extends HTMLElement{
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(this.getTemplate().content);
+        setTimeout(()=>{this.classList.add("splash-complete")},2000)
     }
 
     connectedCallback() {
@@ -12,7 +13,7 @@ class SplashScreen extends HTMLElement{
 
         
         let color = window.getComputedStyle(this).getPropertyValue("color");
-        canvas.style.backgroundColor = window.getComputedStyle(this).getPropertyValue("background-color")
+        canvas.style.backgroundColor = window.getComputedStyle(this).getPropertyValue("fill")
         //console.log(color)
 
         // Set text properties
@@ -174,7 +175,7 @@ class SplashScreen extends HTMLElement{
 
             connect(sumDistances / particles.length / 10);
             if(sumDistances < 10) {
-                setTimeout(()=>{canvas.classList.add("display-none")},500)
+                setTimeout(()=>{canvas.classList.add("display-none")},600)                
                 return;
             }
             
@@ -226,6 +227,7 @@ class SplashScreen extends HTMLElement{
                     left: 0;    
                     overflow: hidden;
                 }
+                
                 #splashscreen.display-none {
                     opacity: 0;
                     z-index: -100;   

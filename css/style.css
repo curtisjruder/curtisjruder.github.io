@@ -7,7 +7,23 @@
 
 splash-screen {
   color: var(--colorPrimary);
-  background-color: var(--colorBackground);
+  fill: var(--colorBackground);
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 150;
+  left: 0;
+  overflow: hidden;
+}
+
+splash-screen.splash-complete {
+  opacity: 0;
+  z-index: -100;
+  visibility: hidden;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 back-ground {
