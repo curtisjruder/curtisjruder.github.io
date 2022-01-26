@@ -1,8 +1,15 @@
-$colorPrimary: #2ae7e7;
+:root{    
+    --colorPrimary: #2ae7e7;
+    --colorSecond: rgb(219, 143, 113);// rgb(236, 189, 255);
+    --colorBackground: #201A1A;
+    --colorText: #dbdbdb;
+}
 
-$colorSecond: rgb(219, 143, 113);// rgb(236, 189, 255);
-$colorBackground: #201A1A;
-$colorText: #dbdbdb;
+$colorPrimary: var(--colorPrimary);
+
+$colorSecond: var(--colorSecond);// rgb(236, 189, 255);
+$colorBackground: var(--colorBackground);
+$colorText: var(--colorText);
 
 $screenSmall: 600px;
 $screenMed: 1000px;

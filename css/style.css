@@ -1,6 +1,13 @@
+:root {
+  --colorPrimary: #2ae7e7;
+  --colorSecond: rgb(219, 143, 113);
+  --colorBackground: #201A1A;
+  --colorText: #dbdbdb;
+}
+
 splash-screen {
-  color: #2ae7e7;
-  background-color: #201A1A;
+  color: var(--colorPrimary);
+  background-color: var(--colorBackground);
 }
 
 back-ground {
@@ -15,7 +22,7 @@ back-ground {
 }
 
 back-ground canvas {
-  color: #2ae7e7;
+  color: var(--colorPrimary);
   opacity: 0.05;
   width: 100%;
   height: 100%;
@@ -35,7 +42,7 @@ nav-bar .menu {
           align-items: center;
   width: 100%;
   height: 4rem;
-  background-color: #201A1A;
+  background-color: var(--colorBackground);
   padding: 0;
   top: 0;
   left: 0;
@@ -65,11 +72,11 @@ nav-bar .menu .name a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #2ae7e7;
+  color: var(--colorPrimary);
 }
 
 nav-bar .menu h2 {
-  color: #2ae7e7;
+  color: var(--colorPrimary);
   font-size: calc(0.2vw + 16.5px);
   margin-left: 2.5vw;
 }
@@ -88,7 +95,7 @@ nav-bar .menu svg {
   border: none;
   max-height: 80%;
   min-height: 50%;
-  fill: #2ae7e7;
+  fill: var(--colorPrimary);
 }
 
 nav-bar .menu svg:hover {
@@ -98,8 +105,48 @@ nav-bar .menu svg:hover {
           transform: rotate(120deg);
 }
 
+nav-bar .menu-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+nav-bar .menu-options .lightmode {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+nav-bar .menu-options .lightmode svg {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+nav-bar .menu-options .lightmode svg:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
 nav-bar .menu-btn {
-  margin-right: 2.5vw;
+  margin: 0 calc(10px + 1vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,7 +173,7 @@ nav-bar .menu-btn:hover {
 nav-bar .menu-btn__burger {
   width: 100%;
   height: 2.5px;
-  background: #2ae7e7;
+  background: var(--colorPrimary);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -136,7 +183,7 @@ nav-bar .menu-btn__burger::before, nav-bar .menu-btn__burger::after {
   position: absolute;
   width: 100%;
   height: 2.5px;
-  background: #2ae7e7;
+  background: var(--colorPrimary);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -162,13 +209,13 @@ nav-bar .menu-btn.open .menu-btn__burger {
 nav-bar .menu-btn.open .menu-btn__burger::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  background: #201A1A;
+  background: var(--colorBackground);
 }
 
 nav-bar .menu-btn.open .menu-btn__burger::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  background: #201A1A;
+  background: var(--colorBackground);
 }
 
 nav-bar nav {
@@ -176,7 +223,7 @@ nav-bar nav {
   height: 100%;
   width: 0px;
   top: 0px;
-  background-color: #2ae7e7;
+  background-color: var(--colorPrimary);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -218,13 +265,13 @@ nav-bar nav li {
 nav-bar nav li:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border-bottom: 7px solid #db8f71;
+  border-bottom: 7px solid var(--colorSecond);
 }
 
 nav-bar nav li a {
   display: block;
   background-color: inherit;
-  color: #201A1A;
+  color: var(--colorBackground);
   font-size: calc(.5vw + 32px);
   width: 100%;
 }
@@ -260,7 +307,7 @@ footer-comp footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #2ae7e7;
+  background-color: var(--colorPrimary);
 }
 
 footer-comp footer ul li {
@@ -271,14 +318,14 @@ footer-comp footer ul li {
 
 footer-comp footer ul li a {
   margin: 0 1.051vw;
-  color: #201A1A;
+  color: var(--colorBackground);
   text-decoration: none;
 }
 
 footer-comp footer ul li a:hover {
   padding-bottom: 0.7rem;
-  -webkit-box-shadow: inset 0 -0.3rem 0 0 #db8f71;
-          box-shadow: inset 0 -0.3rem 0 0 #db8f71;
+  -webkit-box-shadow: inset 0 -0.3rem 0 0 var(--colorSecond);
+          box-shadow: inset 0 -0.3rem 0 0 var(--colorSecond);
 }
 
 footer-comp footer .social-row li {
@@ -294,7 +341,7 @@ section.resume {
 }
 
 section.resume h2 {
-  color: #dbdbdb;
+  color: var(--colorText);
   padding: 0.2rem 0;
   text-shadow: none;
 }
@@ -358,7 +405,7 @@ div.education h3 {
 
 h1.title {
   padding: 1rem 4rem 0 4rem;
-  border-bottom: solid #2ae7e7 3px;
+  border-bottom: solid var(--colorPrimary) 3px;
 }
 
 div.technology ul {
@@ -384,16 +431,16 @@ div.technology ul li {
   margin: 0.2rem;
   padding: 0.5rem 1.2rem;
   list-style-type: none;
-  background-color: #201A1A;
-  color: #dbdbdb;
+  background-color: var(--colorBackground);
+  color: var(--colorText);
   border-radius: 5%;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--colorText);
   font-size: calc(0.2vw + 16.5px);
 }
 
 div.technology ul li:hover {
-  background-color: #2ae7e7;
-  color: #201A1A;
+  background-color: var(--colorPrimary);
+  color: var(--colorBackground);
   -webkit-transition: all .6s ease-in-out;
   transition: all .6s ease-in-out;
 }
@@ -404,10 +451,10 @@ div.download {
   padding: 1rem 2rem;
   text-align: center;
   list-style-type: none;
-  background-color: #2ae7e7;
-  color: #201A1A;
+  background-color: var(--colorPrimary);
+  color: var(--colorBackground);
   border-radius: 5%;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--colorText);
   font-size: calc(0.2vw + 16.5px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -582,8 +629,8 @@ div.experience .role-responsibility li:not(:first-child) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #201A1A;
-  border: 2px solid #2ae7e7;
+  background-color: var(--colorBackground);
+  border: 2px solid var(--colorPrimary);
   padding: 0;
   max-width: 900px;
   border-radius: 5px;
@@ -599,7 +646,7 @@ div.experience .role-responsibility li:not(:first-child) {
 }
 
 .projects .project h2 {
-  border-bottom: 3px solid #2ae7e7;
+  border-bottom: 3px solid var(--colorPrimary);
   padding: 0;
   margin: 2vh 2vw;
   text-align: center;
@@ -615,12 +662,12 @@ div.experience .role-responsibility li:not(:first-child) {
   padding: 0;
   margin: 2vh auto;
   width: 90%;
-  color: #dbdbdb;
+  color: var(--colorText);
 }
 
 .projects .project svg {
-  fill: #201A1A;
-  background-color: #2ae7e7;
+  fill: var(--colorBackground);
+  background-color: var(--colorPrimary);
   border-radius: 50%;
   height: calc(90px + 3vw);
   width: auto;
@@ -702,12 +749,12 @@ p.instructions {
 
 #project-memory .front {
   z-index: 2;
-  background-color: #201A1A;
-  border: 5px solid #2ae7e7;
+  background-color: var(--colorBackground);
+  border: 5px solid var(--colorPrimary);
 }
 
 #project-memory .front:hover {
-  background-color: #2ae7e7;
+  background-color: var(--colorPrimary);
 }
 
 @media screen and (max-width: 1000px) {
@@ -715,7 +762,7 @@ p.instructions {
     border-width: 3px;
   }
   #project-memory .front:hover {
-    background-color: #201A1A;
+    background-color: var(--colorBackground);
   }
 }
 
@@ -791,10 +838,10 @@ p.instructions {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #201A1A;
+  border: 1px solid var(--colorBackground);
   font-size: calc(0.2vw + 16.5px);
-  background-color: #2ae7e7;
-  color: #201A1A;
+  background-color: var(--colorPrimary);
+  color: var(--colorBackground);
 }
 
 @media screen and (max-width: 1000px) {
@@ -804,9 +851,9 @@ p.instructions {
 }
 
 #project-minesweeper .mine {
-  background-color: #201A1A;
-  color: #db8f71;
-  border-color: #db8f71;
+  background-color: var(--colorBackground);
+  color: var(--colorSecond);
+  border-color: var(--colorSecond);
 }
 
 #project-minesweeper .clearedmine {
@@ -842,11 +889,11 @@ div.selector {
 }
 
 div.selector #selector-on {
-  fill: #2ae7e7;
+  fill: var(--colorPrimary);
 }
 
 div.selector #selector-off {
-  fill: #db8f71;
+  fill: var(--colorSecond);
 }
 
 div.selector .toggle {
@@ -865,8 +912,8 @@ div.selector .on {
   left: 0;
   height: calc(100% - 8rem);
   width: 100vw;
-  background-color: #201A1A;
-  color: #2ae7e7;
+  background-color: var(--colorBackground);
+  color: var(--colorPrimary);
 }
 
 #project-coin-flip {
@@ -886,7 +933,7 @@ div.selector .on {
 #project-coin-flip svg {
   width: 75%;
   height: 75%;
-  fill: #2ae7e7;
+  fill: var(--colorPrimary);
 }
 
 #project-coin-flip .side {
@@ -911,16 +958,16 @@ div.selector .on {
   position: absolute;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  border: 10px double #2ae7e7;
+  border: 10px double var(--colorPrimary);
 }
 
 #project-coin-flip .head {
-  background-color: #201A1A;
+  background-color: var(--colorBackground);
   z-index: 10;
 }
 
 #project-coin-flip .tail {
-  background-color: #201A1A;
+  background-color: var(--colorBackground);
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
 }
@@ -1007,9 +1054,9 @@ div.selector .on {
 }
 
 #project-sudoku input {
-  color: #201A1A;
-  border: 1px solid #201A1A;
-  background-color: #2ae7e7;
+  color: var(--colorBackground);
+  border: 1px solid var(--colorBackground);
+  background-color: var(--colorPrimary);
   margin: 1px;
   text-align: center;
   -webkit-box-pack: center;
@@ -1019,8 +1066,8 @@ div.selector .on {
 }
 
 #project-sudoku input:invalid {
-  color: #db8f71;
-  border-color: #db8f71;
+  color: var(--colorSecond);
+  border-color: var(--colorSecond);
 }
 
 @media screen and (max-width: 600px) {
@@ -1057,15 +1104,15 @@ div.selector .on {
 }
 
 #project-sudoku .wrong {
-  background-color: #db8f71;
-  color: #201A1A;
-  border-color: #201A1A;
+  background-color: var(--colorSecond);
+  color: var(--colorBackground);
+  border-color: var(--colorBackground);
 }
 
 #project-sudoku .readonly {
-  color: #dbdbdb;
+  color: var(--colorText);
   background-color: transparent;
-  border-color: #2ae7e7;
+  border-color: var(--colorPrimary);
   font-size: calc(0.1vw + 14px);
 }
 
@@ -1098,23 +1145,23 @@ h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #dbdbdb;
+  color: var(--colorText);
 }
 
 h1 {
-  color: #2ae7e7;
+  color: var(--colorPrimary);
   font-size: calc(.5vw + 32px);
   padding: 1rem;
-  text-shadow: 1.5px 1.5px #db8f71;
+  text-shadow: 1.5px 1.5px var(--colorSecond);
 }
 
 h3, h2 {
   padding: 1rem;
-  text-shadow: 2px 2px #201A1A;
+  text-shadow: 2px 2px var(--colorBackground);
 }
 
 h2 {
-  color: #2ae7e7;
+  color: var(--colorPrimary);
   font-size: calc(.4vw + 27px);
 }
 
@@ -1157,25 +1204,25 @@ h3 {
 }
 
 a {
-  color: #dbdbdb;
+  color: var(--colorText);
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a:hover {
-  background-color: #201A1A;
-  color: #2ae7e7;
+  background-color: var(--colorBackground);
+  color: var(--colorPrimary);
 }
 
 body {
   min-height: 100vh;
-  background-color: #201A1A;
-  color: #dbdbdb;
+  background-color: var(--colorBackground);
+  color: var(--colorText);
 }
 
 img {
   width: 25vh;
-  border: 1px solid #dbdbdb;
+  border: 1px solid var(--colorText);
 }
 
 img:hover {
@@ -1219,7 +1266,7 @@ main .intro img {
   width: 32vh;
   border-radius: 100%;
   border-width: 5px;
-  border-color: #2ae7e7;
+  border-color: var(--colorPrimary);
 }
 
 main .intro h1 {
