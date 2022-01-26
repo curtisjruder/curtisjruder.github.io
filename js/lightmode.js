@@ -1,6 +1,6 @@
 function setInitialMode(){
     let mode = localStorage.getItem("lightMode")
-
+    if(mode === null) mode = sessionStorage.getItem("lightMode");
     if(mode === null || mode === "off") return
 
     let cssItm = document.createElement("link");

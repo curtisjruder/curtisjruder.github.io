@@ -32,8 +32,8 @@ document.querySelector(".lightmode").addEventListener("click", ()=>{
     })
 
     let setting = isLightMode() ? "on" : "off";
-    localStorage.setItem("lightMode",setting)
-    alert("localstorage=  " + localStorage.getItem("lightMode"))
+    localStorage.setItem("lightMode",setting);
+    sessionStorage.setItem("lightMode", setting);
     checkColor();
 })
 
@@ -48,7 +48,6 @@ function checkColor(){
         cssItm.id = "light-mode-css"
         
         document.head.appendChild(cssItm)
-        alert("Attempted to Add CSS")
     }
     else{        
         let cssItm = document.getElementById("light-mode-css");
@@ -60,7 +59,8 @@ setInitialMode();
 
 function setInitialMode(){
     let mode = localStorage.getItem("lightMode")
-
+    if(mode === null) mode = sessionStorage.getItem("lightMode");
+    
     if(mode === null || mode === "off"){
         document.querySelector(".lightmode").querySelectorAll("svg").forEach((itm) => {
             itm.classList.toggle("hidden")
