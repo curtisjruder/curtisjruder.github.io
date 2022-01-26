@@ -1287,4 +1287,5 @@ main p {
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
