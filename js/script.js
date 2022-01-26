@@ -33,7 +33,7 @@ document.querySelector(".lightmode").addEventListener("click", ()=>{
 
     let setting = isLightMode() ? "on" : "off";
     localStorage.setItem("light-mode",setting)
-
+    alert("localstorage=  " + localStorage.getItem("light-mode"))
     checkColor();
 })
 
@@ -47,7 +47,8 @@ function checkColor(){
         cssItm.href = "/css/light.css"
         cssItm.id = "light-mode-css"
         
-        document.head.insertBefore(cssItm, document.getElementById("primary-css").nextSibling)
+        document.head.appendChild(cssItm)
+        alert("Attempted to Add CSS")
     }
     else{        
         let cssItm = document.getElementById("light-mode-css");
