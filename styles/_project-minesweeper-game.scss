@@ -34,10 +34,17 @@
 
     .clearedmine{
         background-color: transparent;
-        color: transparent;
-        transition: all 0.1s ease-in-out;
+        color: transparent;        
         border: none;
     } 
+
+    .possiblemine{
+        background-color: transparent;
+        color: $colorPrimary;
+        transition: all 0.1s ease-in-out;
+        border: 1px solid $colorPrimary;
+    }
+
     
 }
 

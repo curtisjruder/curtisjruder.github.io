@@ -11,6 +11,9 @@ function setupNewGame(){
     if(toggleVisible){
         document.querySelectorAll(".instructions").forEach((itm)=> {itm.classList.add("hidden")})
     }
+    else{
+        document.querySelectorAll(".instructions").forEach((itm)=> {itm.classList.remove("hidden")})
+    }
 
     clearGridCells()
     setupGridCells()
@@ -24,7 +27,7 @@ function setupGridCells(){
         let x = document.createElement("div");
         x.setAttribute('id', i)
         x.setAttribute('class','cell')
-        x.textContent = "*"
+        x.textContent = ""
         x.addEventListener("mouseup",btnClick)
         x.addEventListener('contextmenu', function(e) {e.preventDefault();});
         document.getElementById("project-minesweeper").append(x);
@@ -62,7 +65,7 @@ function btnClick(e){
     let leftClick = getLeftClick(e);
     
     if(leftClick){        
-        if(document.getElementById(this.id).attributes["class"].value == 'cell clearedmine') return;
+        if(document.getElementById(this.id).attributes["class"].value == 'cell possiblemine') return;
         cellClick(this.id);
     }
     else
@@ -80,8 +83,15 @@ function getLeftClick(e){
 
 function toggleColor(id){
     let x = document.getElementById(id)    
-    if (x.textContent !== "*" && !x.classList.contains("clearedmine")) return;
-    x.classList.toggle("clearedmine")    
+
+    if(x.classList.contains("possiblemine")){
+        x.classList.remove("possiblemine")
+        x.textContent = ""
+    }
+    else if(x.textContent === ""){
+        x.classList.add("possiblemine")
+        x.textContent = "X"
+    }
 }
 
 
@@ -101,7 +111,7 @@ function checkIfComplete(){
     for(var i = 0; i < iMax; i++)
         if(isInitialValue(i) && !hasLocation(i)) return;
       
-    
+    fillSolution("cell possiblemine")
     document.getElementById("result").textContent = "WINNER!!!";
 }
 
@@ -116,12 +126,12 @@ function hasLocation(xKey){
     return false;
 }
 
-function fillSolution(){            
+function fillSolution(classVal = "cell mine"){            
     for(i=0; i < minefield.length; i++)
     {
         let x = document.getElementById(minefield[i])
         x.textContent = "X"
-        x.setAttribute('class','cell mine')
+        x.setAttribute('class',classVal)
     }
 }
 
@@ -141,7 +151,8 @@ function checkNeighborhood(id){
             if (hasLocation(i * gridSize + j)) cnt++;
 
     if(cnt == 0){
-        xCell.textContent="";
+        xCell.classList.add("clearedmine")
+        xCell.textContent="*";
         for(var i=iSt; i <=iEnd;i++)
             for(var j = jSt; j <= jEnd; j++)
                 if (isInitialValue(i*gridSize+j)) checkNeighborhood(i*gridSize+j);
@@ -154,7 +165,7 @@ function checkNeighborhood(id){
 function isInitialValue(id){
     let x = document.getElementById(id);
 
-    if (x.textContent == '*') return true;
+    if (x.textContent == '') return true;
     return false;
 }     
 
@@ -163,3 +174,6 @@ document.querySelector(".selector").addEventListener("click", (event) => {
     document.querySelectorAll(".toggle").forEach((itm) => {itm.classList.toggle("on")})
 })
 
+window.addEventListener("resize", ()=>{
+    toggleVisible = window.innerWidth < 1000;
+})

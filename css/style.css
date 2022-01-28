@@ -890,9 +890,15 @@ p.instructions {
 #project-minesweeper .clearedmine {
   background-color: transparent;
   color: transparent;
+  border: none;
+}
+
+#project-minesweeper .possiblemine {
+  background-color: transparent;
+  color: var(--colorPrimary);
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  border: none;
+  border: 1px solid var(--colorPrimary);
 }
 
 div.selector {
