@@ -116,7 +116,7 @@ function getMajorGridElement(i, j){
 function seedPuzzleValues(){
     let iCnt = 0;
     let i, j, val;
-    while (iCnt < 8){
+    while (iCnt < 20){
         i = getRand(0);
         j = getRand(0);
         val = getRand(1);
