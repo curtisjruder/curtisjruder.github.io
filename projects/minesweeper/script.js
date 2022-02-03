@@ -44,7 +44,7 @@ function clearGridCells(){
 function generateSolution(){
     var cnt = 0;
     var cellCnt = document.getElementsByClassName('cell').length;
-    var maxCnt = Math.round((1+Math.random())*0.1*cellCnt);
+    var maxCnt = Math.round((1.2+Math.random()*.4)*0.1*cellCnt);
     minefield = [];
     
     do{            
