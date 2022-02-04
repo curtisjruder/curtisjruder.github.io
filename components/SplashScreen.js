@@ -6,10 +6,7 @@ class SplashScreen extends HTMLElement{
         this.shadowRoot.appendChild(this.getTemplate().content);
         setTimeout(()=>{this.classList.add("splash-complete")},2500)
         setTimeout(()=>{
-            console.log("Inside")
-            console.log(this.shadowRoot)
-
-            this.shadowRoot.getElementById("splashscreen").classList.add("display-none")
+            this.shadowRoot.getElementById("splashscreen")?.classList.add("display-none")
         },2500) 
     }
 
@@ -154,7 +151,6 @@ class SplashScreen extends HTMLElement{
 
         function config(){
             particles = [];
-            console.log(sourceData);
             for(let i = 0; i < sourceData.height; i++){
                 for (let j = 0; j < sourceData.width; j++){
                     addParticle(i,j)

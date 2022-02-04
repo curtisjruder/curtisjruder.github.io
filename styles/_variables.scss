@@ -1,8 +1,15 @@
-:root{    
-    --colorPrimary: #2ae7e7;
-    --colorSecond: rgb(219, 143, 113);// rgb(236, 189, 255);
-    --colorBackground: #201A1A;
-    --colorText: #dbdbdb;
+:root{  
+    --colorPrimaryRGB: 42, 231, 231;  
+    --colorPrimary: rgb(var(--colorPrimaryRGB));
+
+    --colorSecondRGB: 219, 143, 113;
+    --colorSecond: rgb(var(--colorSecondRGB));// rgb(236, 189, 255);
+
+    --colorBackgroundRGB: 32, 26, 26;
+    --colorBackground: rgb(var(--colorBackgroundRGB));
+    
+    --colorTextRGB: 219, 219, 219;
+    --colorText: rgb(var(--colorTextRGB));
 }
 
 $colorPrimary: var(--colorPrimary);
@@ -19,7 +26,7 @@ $fontXLarge: calc(.5vw + 32px);
 $fontLarge: calc(.4vw + 27px);
 $fontMed: calc(.3vw + 22.5px);
 $fontSmall: calc(0.2vw + 16.5px);
-$fontXSmall: calc(0.1vw + 14px);
+$fontXSmall: calc(0.1vw + 15px);
 
 @mixin flexBox($justify) {
     display: flex;

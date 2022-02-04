@@ -1,18 +1,25 @@
 section.resume{
        width: 100%;      
+       
+    //    opacity: 0.6;
        h2{
            color: $colorText;
            padding: 0.2rem 0;
            text-shadow: none;
-       }       
+        //    opacity: 1;
+       }   
+       
 }
 
 div.component{
     padding: 2vh 1vw;
     margin: 1vh auto;
-    //background-color: $colorText;  
-    //border: 1px solid $colorBackground;
-    //color: $colorBackground;
+    //border: 1px solid $colorPrimary;
+    // fill: $colorBackground;
+    // background-color: rgba(-colorBackground, 1);
+    // background-color: $colorBackground;
+    // opacity: 1;
+    background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 
 div.education{
@@ -36,6 +43,7 @@ div.education{
         margin-bottom: 0.5rem;
         color:inherit;
         text-shadow: none;
+        text-align: center;
     }
 
     @media screen and (max-width: $screenSmall){

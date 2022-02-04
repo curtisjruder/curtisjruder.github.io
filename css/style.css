@@ -1,8 +1,12 @@
 :root {
-  --colorPrimary: #2ae7e7;
-  --colorSecond: rgb(219, 143, 113);
-  --colorBackground: #201A1A;
-  --colorText: #dbdbdb;
+  --colorPrimaryRGB: 42, 231, 231;
+  --colorPrimary: rgb(var(--colorPrimaryRGB));
+  --colorSecondRGB: 219, 143, 113;
+  --colorSecond: rgb(var(--colorSecondRGB));
+  --colorBackgroundRGB: 32, 26, 26;
+  --colorBackground: rgb(var(--colorBackgroundRGB));
+  --colorTextRGB: 219, 219, 219;
+  --colorText: rgb(var(--colorTextRGB));
 }
 
 splash-screen {
@@ -380,6 +384,7 @@ section.resume h2 {
 div.component {
   padding: 2vh 1vw;
   margin: 1vh auto;
+  background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 
 div.education {
@@ -409,7 +414,7 @@ div.education div.label {
   padding: 0;
   margin: 0;
   margin-left: 0.5rem;
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
   color: inherit;
 }
 
@@ -419,6 +424,7 @@ div.education h3 {
   margin-bottom: 0.5rem;
   color: inherit;
   text-shadow: none;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -500,7 +506,7 @@ div.download:hover {
 
 div.summary li {
   margin: .5vh 3vw;
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
 }
 
 div.experience div.roles {
@@ -532,7 +538,7 @@ div.experience .company {
 }
 
 div.experience .company .company-detail {
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
   text-align: end;
 }
 
@@ -571,7 +577,7 @@ div.experience .role-detail {
 }
 
 div.experience .role-detail div {
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
 }
 
 @media screen and (max-width: 600px) {
@@ -597,7 +603,7 @@ div.experience .role-responsibility {
 }
 
 div.experience .role-responsibility p {
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
   padding: 0;
   margin: 1.5vh 1.5vw;
   line-height: calc(2vh + 0.7rem);
@@ -619,7 +625,7 @@ div.experience .role-responsibility ul {
 
 div.experience .role-responsibility li {
   padding-top: 0;
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
 }
 
 div.experience .role-responsibility li:not(:first-child) {
@@ -721,7 +727,7 @@ div.experience .role-responsibility li:not(:first-child) {
 }
 
 p.instructions {
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
   text-align: center;
 }
 
@@ -877,7 +883,7 @@ p.instructions {
 
 @media screen and (max-width: 1000px) {
   #project-minesweeper .cell {
-    font-size: calc(0.1vw + 14px);
+    font-size: calc(0.1vw + 15px);
   }
 }
 
@@ -1109,7 +1115,7 @@ div.selector .on {
 
 @media screen and (max-width: 600px) {
   #project-sudoku input {
-    font-size: calc(0.1vw + 14px);
+    font-size: calc(0.1vw + 15px);
   }
 }
 
@@ -1150,7 +1156,7 @@ div.selector .on {
   color: var(--colorText);
   background-color: transparent;
   border-color: var(--colorPrimary);
-  font-size: calc(0.1vw + 14px);
+  font-size: calc(0.1vw + 15px);
 }
 
 h5, h6 {
