@@ -14,11 +14,7 @@ section.resume{
 div.component{
     padding: 2vh 1vw;
     margin: 1vh auto;
-    //border: 1px solid $colorPrimary;
-    // fill: $colorBackground;
-    // background-color: rgba(-colorBackground, 1);
-    // background-color: $colorBackground;
-    // opacity: 1;
+    transition: none;
     background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 

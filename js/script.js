@@ -35,6 +35,7 @@ document.querySelector(".lightmode").addEventListener("click", ()=>{
     localStorage.setItem("lightMode",setting);
     sessionStorage.setItem("lightMode", setting);
     checkColor();
+    
     location.reload();
 })
 

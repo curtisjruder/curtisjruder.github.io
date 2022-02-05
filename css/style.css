@@ -97,7 +97,7 @@ nav-bar .menu .name a {
 
 nav-bar .menu h2 {
   color: var(--colorPrimary);
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
   margin-left: 2.5vw;
 }
 
@@ -348,7 +348,7 @@ footer-comp footer {
 footer-comp footer ul li {
   list-style: none;
   display: inline;
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
 }
 
 footer-comp footer ul li a {
@@ -384,6 +384,8 @@ section.resume h2 {
 div.component {
   padding: 2vh 1vw;
   margin: 1vh auto;
+  -webkit-transition: none;
+  transition: none;
   background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 
@@ -414,7 +416,7 @@ div.education div.label {
   padding: 0;
   margin: 0;
   margin-left: 0.5rem;
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
   color: inherit;
 }
 
@@ -472,7 +474,7 @@ div.technology ul li {
   color: var(--colorText);
   border-radius: 5%;
   border: 1px solid var(--colorText);
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
 }
 
 div.technology ul li:hover {
@@ -492,7 +494,7 @@ div.download {
   color: var(--colorBackground);
   border-radius: 5%;
   border: 1px solid var(--colorText);
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -506,7 +508,7 @@ div.download:hover {
 
 div.summary li {
   margin: .5vh 3vw;
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
 }
 
 div.experience div.roles {
@@ -538,7 +540,7 @@ div.experience .company {
 }
 
 div.experience .company .company-detail {
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
   text-align: end;
 }
 
@@ -577,7 +579,7 @@ div.experience .role-detail {
 }
 
 div.experience .role-detail div {
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
 }
 
 @media screen and (max-width: 600px) {
@@ -603,7 +605,7 @@ div.experience .role-responsibility {
 }
 
 div.experience .role-responsibility p {
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
   padding: 0;
   margin: 1.5vh 1.5vw;
   line-height: calc(2vh + 0.7rem);
@@ -625,7 +627,7 @@ div.experience .role-responsibility ul {
 
 div.experience .role-responsibility li {
   padding-top: 0;
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
 }
 
 div.experience .role-responsibility li:not(:first-child) {
@@ -727,7 +729,7 @@ div.experience .role-responsibility li:not(:first-child) {
 }
 
 p.instructions {
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
   text-align: center;
 }
 
@@ -876,14 +878,14 @@ p.instructions {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid var(--colorBackground);
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
   background-color: var(--colorPrimary);
   color: var(--colorBackground);
 }
 
 @media screen and (max-width: 1000px) {
   #project-minesweeper .cell {
-    font-size: calc(0.1vw + 15px);
+    font-size: calc(0.1vw + 15.5px);
   }
 }
 
@@ -1105,7 +1107,7 @@ div.selector .on {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
 }
 
 #project-sudoku input:invalid {
@@ -1115,7 +1117,7 @@ div.selector .on {
 
 @media screen and (max-width: 600px) {
   #project-sudoku input {
-    font-size: calc(0.1vw + 15px);
+    font-size: calc(0.1vw + 15.5px);
   }
 }
 
@@ -1156,7 +1158,7 @@ div.selector .on {
   color: var(--colorText);
   background-color: transparent;
   border-color: var(--colorPrimary);
-  font-size: calc(0.1vw + 15px);
+  font-size: calc(0.1vw + 15.5px);
 }
 
 h5, h6 {
@@ -1318,7 +1320,7 @@ main .intro h1 {
 
 main p {
   padding: 1rem;
-  font-size: calc(0.2vw + 16.5px);
+  font-size: calc(0.2vw + 17px);
   width: 100%;
 }
 
