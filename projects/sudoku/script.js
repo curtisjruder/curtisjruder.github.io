@@ -186,7 +186,7 @@ function generateSolution(){
         solutionCountMax = 0;
         solutionCount = 0;
         if(++count > 2) return;
-    } while(!generateFullSolution)
+    } while(!generateFullSolution())
         
     configInitialPuzzle();
 

@@ -1188,13 +1188,8 @@ div.selector .on {
 
 @media screen and (max-width: 1000px) {
   #keypad {
-    height: 45px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #keypad {
-    height: 30px;
+    height: 145px;
+    width: 145px;
   }
 }
 
@@ -1236,12 +1231,7 @@ div.selector .on {
 @media screen and (max-width: 1000px) {
   #keypad .key-element {
     width: 45px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #keypad .key-element {
-    width: 30px;
+    height: 30%;
   }
 }
 

@@ -80,12 +80,13 @@ $gridLarge: 60px;
     height: $gridLarge;
 
     @media screen and (max-width: $screenMed){
-        height: $gridMed;
+        height: $gridMed * 3 + 10px;
+        width: $gridMed * 3 + 10px;
     }
 
-    @media screen and (max-width: $screenSmall){
-        height: $gridSmall;            
-    }
+    // @media screen and (max-width: $screenSmall){
+    //     height: $gridSmall;            
+    // }
     .key-element{
         @include flexBox(center);
         caret-color: transparent;
@@ -109,10 +110,11 @@ $gridLarge: 60px;
 
         @media screen and (max-width: $screenMed){
             width: $gridMed;
+            height: 30%;
         }
     
         @media screen and (max-width: $screenSmall){
-            width: $gridSmall;            
+            // width: $gridSmall;            
         }
 
         
