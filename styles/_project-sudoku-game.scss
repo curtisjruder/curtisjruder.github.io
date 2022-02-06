@@ -1,8 +1,9 @@
+$gridSmall: 30px;
+$gridMed: 45px;
+$gridLarge: 60px;
 
 #project-sudoku{
-    $gridSmall: 30px;
-    $gridMed: 45px;
-    $gridLarge: 60px;
+   
 
     display: grid;
     grid-template-columns: repeat(3, 190px);
@@ -25,8 +26,9 @@
         margin: 1px;
         text-align: center;
         justify-content: center;
-
+        caret-color: transparent;
         font-size: $fontSmall;
+       
 
         &:invalid{
             color: $colorSecond;
@@ -37,10 +39,11 @@
             font-size: $fontXSmall;
         }
     }
-    
+
+
     .inputGroup{
         display: grid;
-         
+        justify-content: center;
         grid-template-columns: repeat(3, $gridLarge);
         grid-template-rows: repeat(3, $gridLarge);
 
@@ -55,16 +58,64 @@
         }
     }
 
-    .wrong{
-        background-color: $colorSecond;
-        color: $colorBackground;
-        border-color: $colorBackground;
-    }
-
     .readonly{
         color: $colorText;
         background-color: transparent;
         border-color: $colorPrimary;
         font-size: $fontXSmall;
+    }
+
+    .selected{
+        background-color: $colorSecond;
+        color: $colorBackground;
+        border-color: $colorBackground;
+    }
+}
+
+#keypad{
+    @include flexBox(space-between);
+    flex-direction: row;
+    margin: 2vh auto;
+    // width: calc($gridLarge * 10);
+    height: $gridLarge;
+
+    @media screen and (max-width: $screenMed){
+        height: $gridMed;
+    }
+
+    @media screen and (max-width: $screenSmall){
+        height: $gridSmall;            
+    }
+    .key-element{
+        @include flexBox(center);
+        caret-color: transparent;
+        margin: 0 .2vw;
+        padding: 0;
+        width: $gridLarge;
+        height: 100%;
+        background-color: $colorBackground;
+        color: $colorText;
+        border: 2px solid $colorPrimary;
+        text-align: center;
+        font-size: $fontSmall;
+
+        @media screen and (min-width: $screenMed){
+            &:hover{
+                background-color: $colorPrimary;
+                color: $colorBackground;
+            }
+        }
+        
+
+        @media screen and (max-width: $screenMed){
+            width: $gridMed;
+        }
+    
+        @media screen and (max-width: $screenSmall){
+            width: $gridSmall;            
+        }
+
+        
+    
     }
 }

@@ -6,10 +6,7 @@ let board = document.getElementById("project-sudoku");
 let solutionCount = 0;
 let solutionCountMax = 0;
 
-document.getElementById("result").addEventListener("click",(e)=>{
-    
-    if(e.target.textContent !== "") setupNewGame();
-})
+
 
 setupNewGame();
 
@@ -21,6 +18,7 @@ function setupNewGame(){
     clearGridCells();
     setupMajorGrid();
     setupMinorGrid(); 
+    setupKeypad();
     generateSolution();
     populateGrid();
 }
@@ -28,37 +26,60 @@ function setupNewGame(){
 function populateGrid(){
     for(let i = 0; i < 9; i++){
         for(let j = 0; j < 9; j++){
-            let itm = document.getElementById("" + i + j)
+            let itm = document.getElementById("" + i + j)            
             if(puzzleInitial[i][j] !==0) {
                 itm.classList.add("readonly")
                 itm.value = puzzleInitial[i][j];
                 itm.readOnly = true;                             
             }
-            itm.addEventListener("change", valueChange) 
+            itm.addEventListener("click", inputClick) 
         }
     }
 }
 
-function valueChange(e){
-    let itm = e.target;
+function inputClick(e){    
+    if(document.getElementById("result").textContent !== "") {
+        setupNewGame();
+        return;
+    }
+
+   document.querySelectorAll("input").forEach((itm) => {
+       if(itm.classList.contains("selected")) itm.classList.remove("selected");
+   })
+
+   let itm = e.target;
+   if(!itm.classList.contains("readonly")) itm.classList.add("selected");
+}
+
+function keyPadClick(e){
+    pushValueIntoPuzzle(parseInt(e.target.textContent));
+}
+
+function pushValueIntoPuzzle(val){
+    let itm = document.querySelector(".selected");
+    if(!itm) return;
+
     let i = parseInt(itm.id.substring(0,1))
     let j = parseInt(itm.id.substring(1,2))
-                    
-    let val = itm.value;
 
-    if(val === "") {
-        itm.classList.remove("wrong")
-    }
-    else if(val == puzzleSolution[i][j]){
-        itm.classList.remove("wrong")
-        itm.classList.add("readonly")
-        itm.readOnly = true;
+    if(val == puzzleSolution[i][j]){
+        itm.classList.remove("selected")
+        itm.classList.add("readonly") 
+        itm.value = val;       
         checkForWin();
     }
-    else{
-        itm.classList.add("wrong")
-    }         
 }
+
+document.addEventListener("keyup", (e) =>{
+    if(!Number(e.key)) return;
+
+    let val = parseInt(e.key);
+    if(val < 1 || val > 9) return;
+
+    pushValueIntoPuzzle(val)  
+})
+
+
 
 function checkForWin(){
     for(let i = 0; i < 9; i++){
@@ -74,7 +95,7 @@ function checkForWin(){
 function clearGridCells(){           
     while(document.getElementsByTagName('input').length > 0){
         let x = document.getElementsByTagName('input')[0];
-        x.removeEventListener("change", valueChange);  
+        x.removeEventListener("click", inputClick);  
         x.remove();
     }
 
@@ -82,8 +103,6 @@ function clearGridCells(){
         document.getElementsByClassName('inputGroup')[0].remove();
     }
 }
-
-
 
 function setupMajorGrid(){
     let template = document.getElementById("inputGroup");
@@ -109,6 +128,21 @@ function setupMinorGrid(){
     }
 }
 
+function setupKeypad(){
+    let parent = document.getElementById("keypad")
+    if(parent.childNodes.length !== 0) return;
+
+    for(let i = 1; i < 10; i++){
+        let key = document.createElement("div");
+        key.textContent = i;
+        key.classList.add("key-element");
+        key.addEventListener("click", keyPadClick);
+        parent.appendChild(key);
+    }
+}
+
+
+
 function getMajorGridElement(i, j){
     return document.getElementById("g" + Math.floor(i/3) + Math.floor(j/3))
 }
@@ -116,7 +150,7 @@ function getMajorGridElement(i, j){
 function seedPuzzleValues(){
     let iCnt = 0;
     let i, j, val;
-    while (iCnt < 20){
+    while (iCnt < 25){
         i = getRand(0);
         j = getRand(0);
         val = getRand(1);
@@ -143,15 +177,17 @@ function initializeSolutionGrid(){
     }
 }
 
-function generateSolution(){
-    initializeSolutionGrid();   
-    seedPuzzleValues();
+function generateSolution(){    
+    let count = 0;
 
-    solutionCountMax = 0;
-    solutionCount = 0;
-
-    if(!generateFullSolution()) return; 
-    
+    do{        
+        initializeSolutionGrid();   
+        seedPuzzleValues();    
+        solutionCountMax = 0;
+        solutionCount = 0;
+        if(++count > 2) return;
+    } while(!generateFullSolution)
+        
     configInitialPuzzle();
 
     let limit = 7; // sets the difficulty.  Higher number = more difficult

@@ -1107,6 +1107,7 @@ div.selector .on {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  caret-color: transparent;
   font-size: calc(0.2vw + 17px);
 }
 
@@ -1124,6 +1125,9 @@ div.selector .on {
 #project-sudoku .inputGroup {
   display: -ms-grid;
   display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-grid-columns: (60px)[3];
       grid-template-columns: repeat(3, 60px);
   -ms-grid-rows: (60px)[3];
@@ -1148,17 +1152,97 @@ div.selector .on {
   }
 }
 
-#project-sudoku .wrong {
-  background-color: var(--colorSecond);
-  color: var(--colorBackground);
-  border-color: var(--colorBackground);
-}
-
 #project-sudoku .readonly {
   color: var(--colorText);
   background-color: transparent;
   border-color: var(--colorPrimary);
   font-size: calc(0.1vw + 15.5px);
+}
+
+#project-sudoku .selected {
+  background-color: var(--colorSecond);
+  color: var(--colorBackground);
+  border-color: var(--colorBackground);
+}
+
+#keypad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  flex-direction: row;
+  margin: 2vh auto;
+  height: 60px;
+}
+
+@media screen and (max-width: 1000px) {
+  #keypad {
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #keypad {
+    height: 30px;
+  }
+}
+
+#keypad .key-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  caret-color: transparent;
+  margin: 0 .2vw;
+  padding: 0;
+  width: 60px;
+  height: 100%;
+  background-color: var(--colorBackground);
+  color: var(--colorText);
+  border: 2px solid var(--colorPrimary);
+  text-align: center;
+  font-size: calc(0.2vw + 17px);
+}
+
+@media screen and (min-width: 1000px) {
+  #keypad .key-element:hover {
+    background-color: var(--colorPrimary);
+    color: var(--colorBackground);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #keypad .key-element {
+    width: 45px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #keypad .key-element {
+    width: 30px;
+  }
 }
 
 h5, h6 {
