@@ -147,15 +147,15 @@ function getMajorGridElement(i, j){
 
 function seedPuzzleValues(){
     let iCnt = 0;
-    let i, j, val;
-    while (iCnt < 25){
-        i = getRand(0);
-        j = getRand(0);
+    let i, val;
+
+    i = 0;
+    while (i < 9){        
         val = getRand(1);
 
-        if (isValidValue(i,j,val)){
-            puzzleSolution[i][j] = val;
-            iCnt++;
+        if (isValidValue(i,i,val)){
+            puzzleSolution[i][i] = val;
+            i++;
         }
     }
 }
