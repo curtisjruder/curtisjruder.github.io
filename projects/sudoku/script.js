@@ -7,7 +7,7 @@ let solutionCount = 0;
 let solutionCountMax = 0;
 
 
-
+setupKeypad();
 setupNewGame();
 
 function setupNewGame(){
@@ -17,8 +17,7 @@ function setupNewGame(){
 
     clearGridCells();
     setupMajorGrid();
-    setupMinorGrid(); 
-    setupKeypad();
+    setupMinorGrid();     
     generateSolution();
     populateGrid();
 }
@@ -130,7 +129,6 @@ function setupMinorGrid(){
 
 function setupKeypad(){
     let parent = document.getElementById("keypad")
-    if(parent.childNodes.length !== 0) return;
 
     for(let i = 1; i < 10; i++){
         let key = document.createElement("div");
