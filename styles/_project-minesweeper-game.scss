@@ -50,11 +50,12 @@
 
 div.selector{   
     
-    display: none;
+    //display: none;
+    @include flexBox(space-around);
 
-    @media screen and (max-width: $screenMed){
-        @include flexBox(space-around);
-    }
+    // @media screen and (max-width: $screenMed){
+    //     @include flexBox(space-around);
+    // }
 
     margin: 2vh 1vw;
     #selector-on{

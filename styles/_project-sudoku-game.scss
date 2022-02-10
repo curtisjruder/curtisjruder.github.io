@@ -111,6 +111,7 @@ $gridLarge: 60px;
         @media screen and (max-width: $screenMed){
             width: $gridMed;
             height: 30%;
+            margin: 0;
         }
     
         @media screen and (max-width: $screenSmall){

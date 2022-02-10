@@ -911,6 +911,20 @@ p.instructions {
 
 div.selector {
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 2vh 1vw;
 }
 
@@ -1232,6 +1246,7 @@ div.selector .on {
   #keypad .key-element {
     width: 45px;
     height: 30%;
+    margin: 0;
   }
 }
 

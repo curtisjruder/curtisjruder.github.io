@@ -1,14 +1,14 @@
 let minefield = [];
 const gridSize = 10;
 
-let toggleVisible = window.innerWidth < 1000;
+let smallScreen = window.innerWidth < 1000;
 
 // document.addEventListener('contextmenu', function(e) {e.preventDefault();});
 setupNewGame();
 
 function setupNewGame(){
     document.getElementById("result").textContent = "";
-    if(toggleVisible){
+    if(smallScreen){
         document.querySelectorAll(".instructions").forEach((itm)=> {itm.classList.add("hidden")})
     }
     else{
@@ -65,7 +65,7 @@ function btnClick(e){
     let leftClick = getLeftClick(e);
     
     if(leftClick){        
-        if(document.getElementById(this.id).attributes["class"].value == 'cell possiblemine') return;
+        if(this.classList.contains("possiblemine")) return;
         cellClick(this.id);
     }
     else
@@ -73,12 +73,11 @@ function btnClick(e){
 }
 
 function getLeftClick(e){
-    if(toggleVisible){
-        return document.getElementById("selector-on").classList.contains("on");
-    }
-    else{
-        return (e.which && e.which == 1) || (e.button && e.button == 0);
-    }
+    console.log(e.which && e.which === 3, document.getElementById("selector-off").classList.contains("on"))
+    
+    
+    return !((e.which && e.which === 3) || (document.getElementById("selector-off").classList.contains("on")))
+
 }
 
 function toggleColor(id){
@@ -175,5 +174,5 @@ document.querySelector(".selector").addEventListener("click", (event) => {
 })
 
 window.addEventListener("resize", ()=>{
-    toggleVisible = window.innerWidth < 1000;
+    smallScreen = window.innerWidth < 1000;
 })
