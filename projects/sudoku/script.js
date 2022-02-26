@@ -188,10 +188,17 @@ function generateSolution(){
         
     configInitialPuzzle();
 
-    let limit = 7; // sets the difficulty.  Higher number = more difficult
+    let limit = 20 // sets the difficulty.  Higher number = more difficult
+    let remaining = 81;
+    while(limit > 0 && remaining > 26){
+        let val = canEliminateDataPoint(getRand(0), getRand(0));
 
-    while(limit > 0){
-        if(!canEliminateDataPoint(getRand(0), getRand(0))) limit--;
+        if(val < 0){
+            limit--;
+        }            
+        else if(val > 0){
+            remaining--;
+        }            
     }
 
     // Confirm everything is good to go
@@ -203,7 +210,8 @@ function generateSolution(){
 
 function canEliminateDataPoint(i,j){
     let val = puzzleInitial[i][j];
-    if(val === 0) return true
+    
+    if(val === 0) return 0
 
     puzzleInitial[i][j] = 0;
 
@@ -215,11 +223,11 @@ function canEliminateDataPoint(i,j){
     if(generateFullSolution()){
         // created scenario for 2 or more solutions; reset value
         puzzleInitial[i][j] = val;
-        return false;
+        return -1;
     }
 
     // only one solution... which is what we want
-    return true;
+    return 1;
 }
 
 function configInitialPuzzle(){
