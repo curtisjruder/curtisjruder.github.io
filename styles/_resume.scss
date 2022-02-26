@@ -1,12 +1,10 @@
 section.resume{
        width: 100%;      
        
-    //    opacity: 0.6;
        h2{
            color: $colorText;
            padding: 0.2rem 0;
            text-shadow: none;
-        //    opacity: 1;
        }   
        
 }
@@ -15,7 +13,7 @@ div.component{
     padding: 2vh 1vw;
     margin: 1vh auto;
     transition: none;
-    background-color: rgba(var(--colorBackgroundRGB), 0.6);
+    //background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 
 div.education{

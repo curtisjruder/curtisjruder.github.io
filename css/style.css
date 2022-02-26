@@ -386,7 +386,6 @@ div.component {
   margin: 1vh auto;
   -webkit-transition: none;
   transition: none;
-  background-color: rgba(var(--colorBackgroundRGB), 0.6);
 }
 
 div.education {
@@ -910,7 +909,6 @@ p.instructions {
 }
 
 div.selector {
-  display: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -926,25 +924,6 @@ div.selector {
       -ms-flex-align: center;
           align-items: center;
   margin: 2vh 1vw;
-}
-
-@media screen and (max-width: 1000px) {
-  div.selector {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
 }
 
 div.selector #selector-on {
