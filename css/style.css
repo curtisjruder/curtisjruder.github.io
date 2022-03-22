@@ -1149,7 +1149,13 @@ div.selector .on {
   color: var(--colorText);
   background-color: transparent;
   border-color: var(--colorPrimary);
-  font-size: calc(0.1vw + 15.5px);
+  font-size: calc(0.2vw + 17px);
+}
+
+@media screen and (max-width: 1000px) {
+  #project-sudoku .readonly {
+    font-size: calc(0.1vw + 15.5px);
+  }
 }
 
 #project-sudoku .selected {
@@ -1211,7 +1217,6 @@ div.selector .on {
   color: var(--colorText);
   border: 2px solid var(--colorPrimary);
   text-align: center;
-  font-size: calc(0.2vw + 17px);
 }
 
 @media screen and (min-width: 1000px) {

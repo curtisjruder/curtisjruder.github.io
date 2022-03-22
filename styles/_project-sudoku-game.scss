@@ -62,7 +62,11 @@ $gridLarge: 60px;
         color: $colorText;
         background-color: transparent;
         border-color: $colorPrimary;
-        font-size: $fontXSmall;
+        font-size: $fontSmall;
+
+        @media screen and (max-width: $screenMed){
+            font-size: $fontXSmall;
+        }
     }
 
     .selected{
@@ -98,7 +102,7 @@ $gridLarge: 60px;
         color: $colorText;
         border: 2px solid $colorPrimary;
         text-align: center;
-        font-size: $fontSmall;
+        //font-size: $fontMed;
 
         @media screen and (min-width: $screenMed){
             &:hover{
