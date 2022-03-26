@@ -139,25 +139,8 @@ function setupKeypad(){
     }
 }
 
-
-
 function getMajorGridElement(i, j){
     return document.getElementById("g" + Math.floor(i/3) + Math.floor(j/3))
-}
-
-function seedPuzzleValues(){
-    let iCnt = 0;
-    let i, val;
-
-    i = 0;
-    while (i < 9){        
-        val = getRand(1);
-
-        if (isValidValue(i,i,val)){
-            puzzleSolution[i][i] = val;
-            i++;
-        }
-    }
 }
 
 function getRand(start){
@@ -179,8 +162,7 @@ function generateSolution(){
     let count = 0;
 
     do{        
-        initializeSolutionGrid();   
-        seedPuzzleValues();    
+        initializeSolutionGrid();     
         solutionCountMax = 0;
         solutionCount = 0;
         if(++count > 2) return;
@@ -188,9 +170,9 @@ function generateSolution(){
         
     configInitialPuzzle();
 
-    let limit = 20 // sets the difficulty.  Higher number = more difficult
+    let limit = 18 // sets the difficulty.  Higher number = more difficult
     let remaining = 81;
-    while(limit > 0 && remaining > 26){
+    while(limit > 0 && remaining > 25){
         let val = canEliminateDataPoint(getRand(0), getRand(0));
 
         if(val < 0){
@@ -253,12 +235,14 @@ function resetSolutionPuzzle(){
 function generateFullSolution(iSt = 0, jSt = 0){
     // Brute force solve of Sudoku    
     // Loop each row and column filling in 1 through 9 and then proceding to the next
+
     for(let i = iSt; i < 9; i++){
         for(let j = jSt; j < 9; j++){
             if(puzzleSolution[i][j] === 0){
-                for(let val = 1; val <= 9; val++){                   
-                   if (isValidValue(i,j,val)){                    
-                        puzzleSolution[i][j] = val;                        
+                let rnd = getRand(1);
+                for(let val = rnd; val < 9 + rnd; val++){                   
+                   if (isValidValue(i,j,(val % 9) + 1)){                    
+                        puzzleSolution[i][j] = (val % 9) + 1;                        
                         // Recursive call moving on to the next column
                         if(generateFullSolution(i,j+1)) return true;
 
