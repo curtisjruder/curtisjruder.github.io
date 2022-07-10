@@ -1,0 +1,59 @@
+.typing{
+    @include flexBox(space-around);
+    flex-direction: column;
+            
+    padding: 0;
+    max-width: 900px;
+    border-radius: 5px;
+    margin: 5vh 5vw;
+    
+    #item-img{        
+        background-color: transparent;    
+        img{
+            border: none;    
+            width: 18vh; 
+            background-color: transparent;    
+        }
+    }
+
+    input{
+        width: $fontXXLarge;
+        height: $fontXXLarge;
+        text-align: center;
+        margin: 5px;
+        font-size: $fontLarge;
+        color: $colorPrimary;
+        background-color: $colorBackground;
+        border: 1px solid $colorPrimary;
+
+        &.solved{
+            color: $colorBackground;
+            background-color: $colorPrimary;   
+            outline: none;
+            user-select: none;
+        }
+
+        &.wrong{
+            color: $colorBackground;
+            background-color: $colorSecond;
+        }
+
+        @media screen and (max-width: $screenSmall){
+            width: $fontLarge;
+            height: $fontLarge;
+            font-size: $fontMed;
+        }
+    } 
+
+    #result{
+        font-size: $fontXXLarge;
+        color: $colorText;
+        background-color: transparent;
+        margin: 1vh 0;
+
+        @media screen and (max-width: $screenSmall){
+            font-size: $fontLarge;
+        }
+    }
+    
+}

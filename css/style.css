@@ -1234,6 +1234,86 @@ div.selector .on {
   }
 }
 
+.typing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 0;
+  max-width: 900px;
+  border-radius: 5px;
+  margin: 5vh 5vw;
+}
+
+.typing #item-img {
+  background-color: transparent;
+}
+
+.typing #item-img img {
+  border: none;
+  width: 18vh;
+  background-color: transparent;
+}
+
+.typing input {
+  width: calc(1.5vw + 38px);
+  height: calc(1.5vw + 38px);
+  text-align: center;
+  margin: 5px;
+  font-size: calc(.4vw + 27px);
+  color: var(--colorPrimary);
+  background-color: var(--colorBackground);
+  border: 1px solid var(--colorPrimary);
+}
+
+.typing input.solved {
+  color: var(--colorBackground);
+  background-color: var(--colorPrimary);
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.typing input.wrong {
+  color: var(--colorBackground);
+  background-color: var(--colorSecond);
+}
+
+@media screen and (max-width: 600px) {
+  .typing input {
+    width: calc(.4vw + 27px);
+    height: calc(.4vw + 27px);
+    font-size: calc(.3vw + 22.5px);
+  }
+}
+
+.typing #result {
+  font-size: calc(1.5vw + 38px);
+  color: var(--colorText);
+  background-color: transparent;
+  margin: 1vh 0;
+}
+
+@media screen and (max-width: 600px) {
+  .typing #result {
+    font-size: calc(.4vw + 27px);
+  }
+}
+
 h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;

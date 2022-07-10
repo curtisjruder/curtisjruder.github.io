@@ -1,30 +1,39 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Memory</title>
+    <title>Projects | Typing</title>
     <link rel="icon" href="/images/icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link id="primary-css" rel="stylesheet" href="/css/style.css">
     <script src="./script.js" defer></script>
-    <script src="/js/lightmode.js"></script>
     <script src="/js/script.js" defer></script>
+    <script src="/js/lightmode.js"></script>
     <script src="/components/NavBar.js"></script>
     <script src="/components/Footer.js"></script>    
     <script src="/components/BackGround.js" defer></script>  
 </head>
-
 <body>
     <nav-bar></nav-bar>
     <main>
-    <h1 id="project-label">Memory</h1>
-    <p class="instructions">Clear the board by matching image pairs.  Good luck!</p>    
-        <div id="project-memory"></div>             
+        <div class="typing fade-transition"> 
+            <div id="result"></div>
+            <div id="item-img"></div>
+            
+            <div class="proj-descr">
+                <div id="solution"></div>
+                <div id="user-input" class="typinginput"></div>
+            </div>                
+        </a>
     </main>
     <back-ground></back-ground>
     <footer-comp></footer-comp> 
+
+    <template id="inputElement">
+        <input class="type-input" maxlength="1" type="text" autocomplete="off"> 
+    </template>
 </body>
 </html>
