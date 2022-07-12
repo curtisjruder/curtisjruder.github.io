@@ -1265,6 +1265,7 @@ div.selector .on {
   border: none;
   width: 18vh;
   background-color: transparent;
+  margin: 5vh 5vw;
 }
 
 .typing input {
@@ -1295,9 +1296,10 @@ div.selector .on {
 
 @media screen and (max-width: 600px) {
   .typing input {
-    width: calc(.4vw + 27px);
-    height: calc(.4vw + 27px);
-    font-size: calc(.3vw + 22.5px);
+    width: calc(.3vw + 22.5px);
+    height: calc(.3vw + 22.5px);
+    font-size: calc(0.2vw + 17px);
+    margin: 1px;
   }
 }
 
@@ -1310,7 +1312,7 @@ div.selector .on {
 
 @media screen and (max-width: 600px) {
   .typing #result {
-    font-size: calc(.4vw + 27px);
+    font-size: calc(.3vw + 22.5px);
   }
 }
 

@@ -12,7 +12,8 @@
         img{
             border: none;    
             width: 18vh; 
-            background-color: transparent;    
+            background-color: transparent;  
+            margin: 5vh 5vw;  
         }
     }
 
@@ -39,9 +40,10 @@
         }
 
         @media screen and (max-width: $screenSmall){
-            width: $fontLarge;
-            height: $fontLarge;
-            font-size: $fontMed;
+            width: $fontMed;
+            height: $fontMed;
+            font-size: $fontSmall;
+            margin: 1px;
         }
     } 
 
@@ -52,7 +54,8 @@
         margin: 1vh 0;
 
         @media screen and (max-width: $screenSmall){
-            font-size: $fontLarge;
+            font-size: $fontMed;
+            
         }
     }
     

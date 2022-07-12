@@ -65,6 +65,8 @@ function setupNewGame(){
 
     addSolution(label);
     addUserInput(label);  
+
+    document.getElementById("u0").focus();
 }
 
 function addSolution(label){     
@@ -88,7 +90,7 @@ function addUserInput(label){
     for(let i = 0; i < label.length; i++){ 
         let x = parent.children[i];       
         x.id = "u" + i;
-        x.addEventListener("change", inputEdit)
+        x.addEventListener("input", inputEdit)
     }
 }
 
@@ -125,7 +127,7 @@ function clearAll(){
 function clearChildren(elem){
     while(elem.children.length > 0){
         let x = elem.children[0];
-        x.removeEventListener("change", inputEdit); 
+        x.removeEventListener("input", inputEdit); 
         x.remove();
     }
 }
@@ -134,20 +136,27 @@ function clearChildren(elem){
 function inputEdit(e){           
     let i = parseInt(e.target.id.substring(1));
     
+    let valid = false;
     if(document.getElementById("s" + i).value.toLowerCase() === e.target.value.toLowerCase()){
         e.target.classList.add("solved");
         e.target.classList.remove("wrong");    
         e.target.readOnly = true;
+        valid = true;
     } else if(e.target.value === ""){
-        e.target.classList.remove("wrong");    
+        e.target.classList.remove("wrong");
     } else {
         if(!e.target.classList.contains("wrong")) e.target.classList.add("wrong"); 
     }
-
-    let inputs = document.getElementById("user-input").children;
-
-    for(let i = 0; i < inputs.length; i++)
-        if(!inputs[i].classList.contains("solved")) return;
     
+    let inputs = document.getElementById("user-input").children;
+    
+    for(let i = 0; i < inputs.length; i++){
+        if(!inputs[i].classList.contains("solved")){
+            if(valid) inputs[i].focus();
+            return;
+        }
+    }
+        
+    document.getElementById("result").focus();    
     document.getElementById("result").textContent = "YOU DID IT!!!!";
 }
