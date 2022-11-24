@@ -49,12 +49,26 @@ const typingArray = [
     }
 ]
 
+let itm = -1;
+
 // Event listener to check if it is already solved
 document.getElementsByClassName("typing")[0].addEventListener("click", () => {
     if(document.getElementById("result").textContent !== "") {
         setupNewGame();
     }
 })
+
+document.body.onkeyup = function(e) {
+    if (e.key == " " ||
+        e.code == "Space" ||      
+        e.keyCode == 32      
+    ) {
+        if(document.getElementById("result").textContent !== "") {
+            setupNewGame();
+        }
+    }
+  }
+
 
 // Initialize game
 setupNewGame();
@@ -113,8 +127,12 @@ function addImage(){
 }
 
 function getArrayItem(){
-    let i = Math.floor(Math.random() * typingArray.length);
-    return typingArray[i];
+    if(itm == -1) 
+        itm = Math.floor(Math.random() * typingArray.length);
+    else
+        itm = (itm + 1) % typingArray.length;
+   
+    return typingArray[itm];
 }
 
 function clearAll(){
