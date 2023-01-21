@@ -1316,6 +1316,80 @@ div.selector .on {
   }
 }
 
+.sightword #buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  max-width: 900px;
+  border-radius: 5px;
+  margin: 5vh 5vw;
+}
+
+.sightword svg {
+  height: calc(1.5vw + 38px);
+  margin: 1vh 2.5vw;
+  width: auto;
+  border: none;
+  max-height: 80%;
+  min-height: 50%;
+  fill: var(--colorPrimary);
+}
+
+.sightword svg:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.sightword h1 {
+  text-align: center;
+  margin: 4vh 2vw;
+}
+
+.sightword #wrong {
+  fill: var(--colorSecond);
+}
+
+.sightword #result {
+  text-align: center;
+  font-size: calc(.3vw + 22.5px);
+}
+
+@media screen and (max-width: 600px) {
+  .sightword #result {
+    font-size: calc(0.2vw + 17px);
+  }
+}
+
+.sightword #word {
+  font-size: calc(1.5vw + 38px);
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+  border: 1px solid var(--colorPrimary);
+  padding: 1vh 3vw;
+  margin: 1vh 1vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .sightword #word {
+    font-size: calc(.3vw + 22.5px);
+  }
+}
+
 h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
