@@ -111,6 +111,10 @@ function checkIfComplete(){
         if(isInitialValue(i) && !hasLocation(i)) return;
       
     fillSolution("cell possiblemine")
+
+    let splash = document.getElementsByTagName("game-victory")[0]
+    splash.dispatchEvent(new Event("winner"))
+
     document.getElementById("result").textContent = "WINNER!!!";
 }
 

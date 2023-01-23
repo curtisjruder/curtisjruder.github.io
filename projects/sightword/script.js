@@ -74,6 +74,9 @@ document.getElementById("correct").addEventListener("click", () =>{
     let i = wordArray.length
     
     if(i == 0){
+        let splash = document.getElementsByTagName("game-victory")[0]
+        splash.dispatchEvent(new Event("winner"))
+        
         document.getElementById("result").textContent = ""
         document.getElementById("buttons").classList.add("hidden")
         document.getElementsByTagName("H1")[0].classList.add("hidden")

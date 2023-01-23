@@ -1390,6 +1390,27 @@ div.selector .on {
   }
 }
 
+game-victory {
+  color: var(--colorPrimary);
+  fill: transparent;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 150;
+  left: 0;
+  overflow: hidden;
+}
+
+game-victory.game-complete {
+  opacity: 0;
+  z-index: -100;
+  visibility: hidden;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
 h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;

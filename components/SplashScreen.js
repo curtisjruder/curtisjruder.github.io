@@ -88,8 +88,7 @@ class SplashScreen extends HTMLElement{
                 ctx.clearRect(0, 0, innerWidth, innerHeight);
                 config();
             }
-            png.src = "data:image/png; base64," + imageBase64;
-       
+            png.src = "data:image/png; base64," + imageBase64;       
         }
 
         // Saves the pixel data as a particle.  Updates the position for each iteration
@@ -144,9 +143,7 @@ class SplashScreen extends HTMLElement{
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
 
-            generateSourceDetails();
-
-            
+            generateSourceDetails();            
         }
 
         function config(){
@@ -177,8 +174,7 @@ class SplashScreen extends HTMLElement{
                 sumDistances += particles[i].update();
 
             connect(sumDistances / particles.length / 10);
-            if(sumDistances < 10) {
-                               
+            if(sumDistances < 10) {                               
                 return;
             }
             

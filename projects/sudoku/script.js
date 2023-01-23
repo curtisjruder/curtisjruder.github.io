@@ -87,6 +87,9 @@ function checkForWin(){
         }
     }
 
+    let splash = document.getElementsByTagName("game-victory")[0]
+    splash.dispatchEvent(new Event("winner"))
+    
     document.getElementById("result").textContent = "YOU WIN!!!"
 }
 

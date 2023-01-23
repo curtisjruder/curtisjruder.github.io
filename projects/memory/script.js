@@ -142,8 +142,12 @@ const checkForVictory = () => {
     if(document.querySelectorAll(".match").length !== (cardsArray.length * 2)) return;
 
     // Victory!
+    let splash = document.getElementsByTagName("game-victory")[0]
+    splash.dispatchEvent(new Event("winner"))
+
     let victory = document.createElement("h1");
     victory.textContent = "Congrats.... YOU WON!!!"
+
     victory.classList.add("intro")
     victory.addEventListener("click", () => {
         location.reload();
