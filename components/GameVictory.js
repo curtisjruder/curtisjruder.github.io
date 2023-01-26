@@ -8,10 +8,10 @@ class GameVictory extends HTMLElement{
             this.XconnectedCallback();
             if(this.classList.contains("game-complete")) this.classList.remove("game-complete")
             if(this.shadowRoot.getElementById("gamevictory")?.classList.contains("display-none")) this.shadowRoot.getElementById("gamevictory")?.classList.remove("display-none")
-            setTimeout(()=>{this.classList.add("game-complete")},3500)
+            setTimeout(()=>{this.classList.add("game-complete")},3700)
             setTimeout(()=>{
                 this.shadowRoot.getElementById("gamevictory")?.classList.add("display-none")
-            },3500) 
+            },3400) 
         })
         
     }
@@ -29,7 +29,7 @@ class GameVictory extends HTMLElement{
             let colorBack = window.getComputedStyle(this).getPropertyValue("fill")
             canvas.style.backgroundColor = colorBack
 
-            let size = 0
+            //let size = 0
             let velocityX = 0;
             let velocityY = 0;
 
@@ -46,24 +46,21 @@ class GameVictory extends HTMLElement{
         ///  Firework Class  ///
         ////////////////////////
             class Firework {
-                constructor(x = canvas.width / 2, y = canvas.height, bExplode = true){
+                constructor(size, x = canvas.width / 2, y = canvas.height, loop = 0){
                     this.x = x
                     this.y = y
+                    this.size = size;                    
+                    this.loop = loop;
+                    this.bExplode = loop < 1;
 
-                    this.bExplode = bExplode 
-
-                    if(this.bExplode){
-                        this.size = size;            
+                    if(loop == 0){         
                         this.dirX = velocityX * (Math.random() * 1.0 - 0.5);                
                         this.dirY = velocityY * (Math.random() * 0.2 + 0.8); 
                     } else {
-                        this.size = Math.max(2, size / 5)
-
                         let val = Math.max(velocityX, velocityY);
                         this.dirX = val * (Math.random()*1.0 - 0.5)
                         this.dirY = val * (Math.random()*1.0 - 0.5)
                     }
-
 
                     this.timer = 100;
                     this.time = 0
@@ -75,7 +72,7 @@ class GameVictory extends HTMLElement{
                 }
 
                 getColorOpacity(){
-                    if(this.bExplode) return (this.time % 30 + 10)/ 40;
+                    if(this.bExplode) return 1;
                     return (this.timer - this.time) / this.timer
                 }
 
@@ -92,7 +89,7 @@ class GameVictory extends HTMLElement{
                         this.valid = false;
 
                         for(let i = 0; i < 100; i++){
-                            this.exploded.push(new Firework(this.x, this.y, false, this.rgb))
+                            this.exploded.push(new Firework(Math.max(2, this.size / 5), this.x, this.y, this.loop + 1))
                         }
                     }
                     let cnt = 0;
@@ -130,17 +127,19 @@ class GameVictory extends HTMLElement{
                 canvas.height = window.innerHeight;
             
                 velocityX = canvas.width / 150;
-                velocityY = canvas.height / 75;
+                velocityY = canvas.height / 100 + 4;
             
-                size = Math.max(Math.ceil(Math.min(canvas.height, canvas.width)/50),10)
+                let size = Math.max(Math.ceil(Math.min(canvas.height, canvas.width)/50),10)
 
                 fireworks = [];
-                let num = 30;
+                console.log(canvas.width, canvas.height)
+
+                let num = 25;
                 
                 //num = 1
                 for(let i = 0; i < num; i++){
                     setTimeout(() => {
-                        fireworks.push(new Firework());    
+                        fireworks.push(new Firework(size));    
                     }, i * 50);            
                 }
 
