@@ -41,6 +41,7 @@ const wordArray = [
     "the",
     "to",
     "up",
+    "Warren",
     "we",
     "you"     
 ]
