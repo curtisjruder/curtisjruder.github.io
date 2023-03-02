@@ -8,10 +8,10 @@ class GameVictory extends HTMLElement{
             this.XconnectedCallback();
             if(this.classList.contains("game-complete")) this.classList.remove("game-complete")
             if(this.shadowRoot.getElementById("gamevictory")?.classList.contains("display-none")) this.shadowRoot.getElementById("gamevictory")?.classList.remove("display-none")
-            setTimeout(()=>{this.classList.add("game-complete")},3700)
+            setTimeout(()=>{this.classList.add("game-complete")},3000)
             setTimeout(()=>{
                 this.shadowRoot.getElementById("gamevictory")?.classList.add("display-none")
-            },3400) 
+            },2500) 
         })
         
     }
@@ -32,6 +32,8 @@ class GameVictory extends HTMLElement{
             //let size = 0
             let velocityX = 0;
             let velocityY = 0;
+
+            let gravity = -.003
 
             // Color to use  
             const color = (opacity = 1) => {
@@ -62,10 +64,8 @@ class GameVictory extends HTMLElement{
                         this.dirY = val * (Math.random()*1.0 - 0.5)
                     }
 
-                    this.timer = 100;
-                    this.time = 0
-
-                    this.gravity = -.003
+                    this.timer = 90;
+                    this.time = 0                    
                     
                     this.valid = true;
                     this.exploded = []
@@ -106,7 +106,7 @@ class GameVictory extends HTMLElement{
             
                     
                     
-                    this.dirY += this.time * this.gravity;
+                    this.dirY += this.time * gravity;
                     this.time += 1
                                 
 
@@ -126,14 +126,16 @@ class GameVictory extends HTMLElement{
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             
-                velocityX = canvas.width / 150;
-                velocityY = canvas.height / 100 + 4;
-            
-                let size = Math.max(Math.ceil(Math.min(canvas.height, canvas.width)/50),10)
-
-                fireworks = [];
                 console.log(canvas.width, canvas.height)
+                velocityX = canvas.width / 150;
+                velocityY = canvas.height / 40 - 3.68;
+                gravity = canvas.height / -120000
 
+                
+                let size = Math.min(Math.max(Math.ceil(Math.min(canvas.height, canvas.width)/150 + 8),10),20)
+                
+                fireworks = [];
+                
                 let num = 25;
                 
                 //num = 1
@@ -182,11 +184,7 @@ class GameVictory extends HTMLElement{
                 #gamevictory.display-none {
                     opacity: 0;
                     z-index: -100;   
-                    height: 500vh;
-                    width: 500vw;
-                    left: -200vw;
-                    top: -200vh;
-                    transition: all 1s linear;
+                    transition: all 0.7s linear;
                 }
             </style>
             <canvas id="gamevictory"></canvas>
