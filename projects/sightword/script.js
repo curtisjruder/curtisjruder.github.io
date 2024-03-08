@@ -1,60 +1,63 @@
 const wordArray = [
-    "all",
+    "a",
+    // "all",
+    "am",
     "an",
     "and",
     "are",
     "at",
-    "am",
+    // "am",
     "be",
-    "best",
+    // "best",
     "but",
     "can",
     "come",
     "Cora",
-    "do",
     "dad",
+    "do",
     "for",
-    "from",
+    // "from",
     "go",
-    "got",
-    "had",
+    // "got",
+    // "had",
     "have",
     "he",
     "here",
     "in",
     "is",
     "it",
-    "little",
-    "love",
+    // "little",
+    // "love",
     "like",
     "look",
+    "love",
     "me",
     "my",
     "mom",
     "no",
     "of",
     "on",
-    "other",
-    "out",
-    "run",
-    "said",
-    "saw",
-    "school",
+    // "other",
+    // "out",
+    // "run",
+    // "said",
+    // "saw",
+    // "school",
     "see",
-    "she",
+    // "she",
     "so",
-    "stop",
+    // "stop",
     "the",
     "to",
     "up",
-    "want",
+    // "want",
     "Warren",
     "we",
-    "went",
+    // "went",
     "what",
-    "would",
+    // "would",
     "yes",
-    "you"     
+    "you"
 ]
 
 let i = wordArray.length
@@ -70,15 +73,15 @@ wordArray.splice(i, 1)
 document.getElementById("correct").addEventListener("click", () =>{
     elemWord = document.getElementById("word")
     let i = wordArray.length
-    
+
     if(i == 0){
         let splash = document.getElementsByTagName("game-victory")[0]
         splash.dispatchEvent(new Event("winner"))
-        
+
         document.getElementById("result").textContent = ""
         document.getElementById("buttons").classList.add("hidden")
         document.getElementsByTagName("H1")[0].classList.add("hidden")
-        elemWord.textContent = "WAY TO GO!!!!";        
+        elemWord.textContent = "WAY TO GO!!!!";
     } else {
         document.getElementById("result").textContent = "Remaining: " + i;
         i = Math.floor(Math.random() * i);
