@@ -1,0 +1,46 @@
+#roster{
+    
+    
+    width: 40%;
+    max-width: 350px;
+    min-width: 250px;
+    border-collapse: collapse;
+
+    .check{
+        width: 25px;
+    }
+
+    th{
+        padding: 2px;
+        background-color: $colorPrimary;
+        color: $colorBackground;
+        border: 2px $colorBackground solid;
+    }
+
+    td{
+        text-align: center;
+        border: 1px $colorPrimary solid;
+    }
+
+    .player-in{
+        background-color: $colorPrimary;
+        border: 1px $colorBackground solid;
+    }
+
+    // border-radius: 5px;
+    // border: 2px $colorPrimary solid;
+
+
+}
+
+#calc{
+    width: 100px;
+    text-align: center;
+    // display: inline;
+    margin: 2vh auto;
+    background-color: $colorPrimary;
+    color: $colorBackground;
+    border-radius: 5px;
+    cursor: pointer;
+
+}

@@ -1,32 +1,39 @@
-<html lang="en">
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curtis Ruder | Home</title>
+    <title>Projects | BBall</title>
     <link rel="icon" href="/images/icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link id="primary-css" rel="stylesheet" href="/assets/style.css">
+    <script src="./script.js" defer></script>
     <script src="/js/script.js" defer></script>
     <script src="/js/lightmode.js"></script>
-    <script src="/components/SplashScreen.js" defer></script>
     <script src="/components/NavBar.js"></script>
     <script src="/components/Footer.js"></script>    
-    <script src="/components/BackGround.js" defer></script>  
+    <script src="/components/BackGround.js" defer></script>    
 </head>
 <body>
-    <splash-screen></splash-screen>
     <nav-bar></nav-bar>
-    <main>        
-        <section class="intro fade-transition">
-            <img src="./images/me.jpg" alt="Picture of me" class="intro">
-            <h3>Hello and welcome!</h3>
-            <h1>Curtis J Ruder</h1>
-            <h2>Engineer, Developer, Problem Solver</h2>
-            <p class="intro">With over a decade of various Engineering roles, continual growth as a leader, and commitment to daily improvement, I solve difficult challenges leveraging an ever growing toolset and capability.</p>
-        </section>
+    <main>
+        <h1 id="project-label">B-Ball Line Up</h1>
+        <table id="roster">
+            <thead>
+                <th>Player</th>
+                <th class="check">✔</th>
+                <th class="qtr">Q1</th>
+                <th class="qtr">Q2</th>
+                <th class="qtr">Q3</th>
+                <th class="qtr">Q4</th>
+            </thead>
+        </table>
+        <div id="calc">Update</div>
+        <div id="line-up"></div>
     </main>
     <back-ground></back-ground>
-    <footer-comp></footer-comp>    
+    <footer-comp></footer-comp> 
 </body>
 </html>

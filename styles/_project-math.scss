@@ -1,0 +1,85 @@
+.math{
+    #buttons{
+        @include flexBox(space-around);
+        //flex-direction: column;
+                
+        padding: 0;
+        max-width: 900px;
+        border-radius: 5px;
+        margin: 5vh 5vw;
+    }
+
+    svg{
+        height: $fontXXLarge;
+        margin: 1vh 2.5vw;
+        width: auto;
+        border: none;
+        max-height: 80%;
+        min-height: 50%;
+        fill: $colorPrimary;
+
+        &:hover{
+            transition: all 0.3s ease-in-out;
+            transform:rotate(360deg);
+        }
+    }
+    h1{
+        text-align: center;
+        margin: 4vh 2vw;
+    }
+
+    // #wrong{
+    //     fill: $colorSecond;
+    // }
+    input{
+        width: $fontXXLarge;
+        height: $fontXXLarge;
+        text-align: center;
+        margin: 5px;
+        font-size: $fontLarge;
+        color: $colorPrimary;
+        background-color: $colorBackground;
+        border: 1px solid $colorPrimary;
+
+        // &.solved{
+        //     color: $colorBackground;
+        //     background-color: $colorPrimary;   
+        //     outline: none;
+        //     user-select: none;
+        // }
+
+        // &.wrong{
+        //     color: $colorBackground;
+        //     background-color: $colorSecond;
+        // }
+
+        @media screen and (max-width: $screenSmall){
+            width: $fontMed;
+            height: $fontMed;
+            font-size: $fontSmall;
+            margin: 1px;
+        }
+    } 
+
+    #mathresult{
+        text-align: center;
+        font-size: $fontMed;
+
+        @media screen and (max-width: $screenSmall){
+            font-size: $fontSmall;            
+        }
+    }
+
+    #mathproblem{
+        font-size: $fontXXLarge;
+        color: $colorText;
+        background-color: $colorBackground;
+        border: 1px solid $colorPrimary;
+        padding: 1vh 3vw;
+        margin: 1vh 1vw;
+        text-align: center;
+        @media screen and (max-width: $screenSmall){
+            font-size: $fontMed;            
+        }
+    }
+}
