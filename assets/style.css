@@ -1055,6 +1055,10 @@ game-victory.game-complete {
 #roster .check {
   width: 25px;
 }
+#roster input {
+  accent-color: var(--colorPrimary);
+  color: var(--colorBackground);
+}
 #roster th {
   padding: 2px;
   background-color: var(--colorPrimary);

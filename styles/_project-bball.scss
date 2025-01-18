@@ -10,6 +10,12 @@
         width: 25px;
     }
 
+    input{
+        // align-c $colorPrimary;
+        accent-color: $colorPrimary;
+        color: $colorBackground;
+    }
+
     th{
         padding: 2px;
         background-color: $colorPrimary;
