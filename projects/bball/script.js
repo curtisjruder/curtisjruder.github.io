@@ -5,16 +5,16 @@ set_roster()
 function set_roster(){ 
     roster.clear()  
     
-    roster.set("Aarav", 1.0)
-    roster.set("Amari", 3.0)
-    roster.set("Arthur", 2.2)
-    roster.set("Austin", 4.0)
-    roster.set("Finley", 1.5)
-    roster.set("Jack", 5.0)
-    roster.set("John", 2.0)
-    roster.set("Maxson", 2.4)
-    roster.set("Royce", 4.5)
-    roster.set("Warren", 5.0)
+    roster.set("Aarav", 1)
+    roster.set("Amari", 3)
+    roster.set("Arthur", 2)
+    roster.set("Austin", 4)
+    roster.set("Finley", 2)
+    roster.set("Jack", 6)
+    roster.set("John", 2)
+    roster.set("Maxson", 3)
+    roster.set("Royce", 5)
+    roster.set("Warren", 6)
 }
 
 // Add the deets to the webpage
@@ -32,8 +32,8 @@ function print_roster(){
 
 function calculate(e){
     set_roster()
-    reset_classlist('player-in')
-    if(reset_classlist('hidden') > 0) return
+    reset_classlist('hidden')
+    if(reset_classlist('player-in') > 0) return
     set_active_players()
     set_line_ups()
 
@@ -146,6 +146,7 @@ function set_line_up(arr, line_up = []){
         line_up.push(arr[0])
         let key = get_key(line_up)
         if(line_ups.has(key)) return
+        // console.log(key + " | " + line_up)
         line_ups.set(key, line_up)
     }
 
