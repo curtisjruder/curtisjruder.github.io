@@ -5,16 +5,16 @@ set_roster()
 function set_roster(){ 
     roster.clear()  
     
-    roster.set("Aarav", 1)
-    roster.set("Amari", 3)
-    roster.set("Arthur", 2)
-    roster.set("Austin", 4)
-    roster.set("Finley", 1)
-    roster.set("Jack", 5)
-    roster.set("John", 2)
-    roster.set("Maxson", 2)
-    roster.set("Royce", 4)
-    roster.set("Warren", 5)
+    roster.set("Aarav", 1.0)
+    roster.set("Amari", 3.0)
+    roster.set("Arthur", 2.2)
+    roster.set("Austin", 4.0)
+    roster.set("Finley", 1.5)
+    roster.set("Jack", 5.0)
+    roster.set("John", 2.0)
+    roster.set("Maxson", 2.4)
+    roster.set("Royce", 4.5)
+    roster.set("Warren", 5.0)
 }
 
 // Add the deets to the webpage
@@ -42,9 +42,8 @@ function calculate(e){
 }
 
 function reset_classlist(className){
-    let itms = document.querySelectorAll('.' + className)
+    let itms = document.querySelectorAll('table .' + className)
 
-    // console.log(itms.length)
     for(let i = 0; i < itms.length; i++){
         itms[i].classList.remove(className)
     }
@@ -78,7 +77,6 @@ function get_line_up(){
 }
 
 function get_score(x){
-    // let scores = []
     let sum = 0
     let min = Number.MAX_SAFE_INTEGER
     for(let i = 1; i <=4; i++){
@@ -125,8 +123,7 @@ function set_active_players(){
             roster.delete(x.name)
             let  blah = document.getElementById(x.name)
             blah.classList.add('hidden')
-        }
-            
+        }            
     }
 }
 
@@ -142,8 +139,7 @@ function randomize(arr){
 }
 
 const line_ups = new Map()
-function set_line_up(arr, line_up = []){
-    
+function set_line_up(arr, line_up = []){    
     line_up = [...line_up]
 
     if(arr.length == 1){

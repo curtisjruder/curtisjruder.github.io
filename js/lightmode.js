@@ -6,7 +6,7 @@ function setInitialMode(){
     let cssItm = document.createElement("link");
     cssItm.type="text/css";
     cssItm.rel = "stylesheet";
-    cssItm.href = "/css/light.css"
+    cssItm.href = "/assets/light.css"
     cssItm.id = "light-mode-css"
     
     document.head.appendChild(cssItm);   
