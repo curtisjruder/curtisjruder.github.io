@@ -2,6 +2,9 @@
     --colorPrimaryRGB: 42, 231, 231;  
     --colorPrimary: rgb(var(--colorPrimaryRGB));
 
+    --colorPrimDarkRGB: 0, 130, 130;  
+    --colorPrimDark: rgb(var(--colorPrimDarkRGB));
+
     --colorSecondRGB: 219, 143, 113;
     --colorSecond: rgb(var(--colorSecondRGB));// rgb(236, 189, 255);
 
@@ -13,6 +16,7 @@
 }
 
 $colorPrimary: var(--colorPrimary);
+$colorPrimDark: var(--colorPrimDark);
 
 $colorSecond: var(--colorSecond);// rgb(236, 189, 255);
 $colorBackground: var(--colorBackground);

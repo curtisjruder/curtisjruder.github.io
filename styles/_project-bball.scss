@@ -1,13 +1,13 @@
 #roster{
-    
-    
     width: 40%;
     max-width: 350px;
     min-width: 250px;
-    border-collapse: collapse;
-
+    // border-collapse: collapse;
+    border: 2px $colorPrimary solid;
+    border-radius: 5px;
     .check{
         width: 25px;
+        border: 1px $colorPrimary solid;
     }
 
     input{
@@ -25,12 +25,27 @@
 
     td{
         text-align: center;
-        border: 1px $colorPrimary solid;
-    }
+        
+    } 
+
+    // .qtr{
+    //     border: none;
+    // }
 
     .player-in{
         background-color: $colorPrimary;
-        border: 1px $colorBackground solid;
+        border: 3px $colorBackground solid;
+    }
+
+    .even{
+        // background-color: $colorPrimDark;
+        // color: $colorSecond;
+        // border: 1px $colorSecond solid;
+    }
+
+    .even.player-in{
+        background-color: $colorPrimDark;
+        // border: 5px $colorSecond solid;
     }
 
     // border-radius: 5px;

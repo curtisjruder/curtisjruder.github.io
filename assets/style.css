@@ -1,6 +1,8 @@
 :root {
   --colorPrimaryRGB: 42, 231, 231;
   --colorPrimary: rgb(var(--colorPrimaryRGB));
+  --colorPrimDarkRGB: 0, 130, 130;
+  --colorPrimDark: rgb(var(--colorPrimDarkRGB));
   --colorSecondRGB: 219, 143, 113;
   --colorSecond: rgb(var(--colorSecondRGB));
   --colorBackgroundRGB: 32, 26, 26;
@@ -1050,10 +1052,12 @@ game-victory.game-complete {
   width: 40%;
   max-width: 350px;
   min-width: 250px;
-  border-collapse: collapse;
+  border: 2px var(--colorPrimary) solid;
+  border-radius: 5px;
 }
 #roster .check {
   width: 25px;
+  border: 1px var(--colorPrimary) solid;
 }
 #roster input {
   accent-color: var(--colorPrimary);
@@ -1067,11 +1071,13 @@ game-victory.game-complete {
 }
 #roster td {
   text-align: center;
-  border: 1px var(--colorPrimary) solid;
 }
 #roster .player-in {
   background-color: var(--colorPrimary);
-  border: 1px var(--colorBackground) solid;
+  border: 3px var(--colorBackground) solid;
+}
+#roster .even.player-in {
+  background-color: var(--colorPrimDark);
 }
 
 #calc {
