@@ -1,7 +1,7 @@
 #roster{
-    width: 40%;
+    width: 50%;
     max-width: 350px;
-    min-width: 250px;
+    min-width: 280px;
     // border-collapse: collapse;
     border: 2px $colorPrimary solid;
     border-radius: 5px;
@@ -26,11 +26,7 @@
     td{
         text-align: center;
         
-    } 
-
-    // .qtr{
-    //     border: none;
-    // }
+    }
 
     .player-in{
         background-color: $colorPrimary;
@@ -39,7 +35,7 @@
 
     .player{
         text-align: left;
-        padding-left: 7%;
+        padding-left: 2vw;
     }
 
     .even{

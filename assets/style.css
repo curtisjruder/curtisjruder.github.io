@@ -1049,9 +1049,9 @@ game-victory.game-complete {
 }
 
 #roster {
-  width: 40%;
+  width: 50%;
   max-width: 350px;
-  min-width: 250px;
+  min-width: 280px;
   border: 2px var(--colorPrimary) solid;
   border-radius: 5px;
 }
@@ -1078,7 +1078,7 @@ game-victory.game-complete {
 }
 #roster .player {
   text-align: left;
-  padding-left: 7%;
+  padding-left: 2vw;
 }
 #roster .even.player-in {
   background-color: var(--colorPrimDark);
