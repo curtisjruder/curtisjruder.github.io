@@ -6,15 +6,15 @@ function set_roster(){
     roster.clear()  
     
     roster.set("Aarav 🏀", 1)
-    roster.set("Amari 🏆", 3)
-    roster.set("Arthur 🏆", 2)
-    roster.set("Austin 🏆", 4)
-    roster.set("Finley 🏀", 2)
-    roster.set("Jack 🏆", 6)
+    roster.set("Amari", 3)
+    roster.set("Arthur", 3)
+    roster.set("Austin", 3)
+    roster.set("Finley 🏀", 1)
+    roster.set("Jack", 5)
     roster.set("John 🏀", 2)
-    roster.set("Maxson 🏀", 3)
-    roster.set("Royce 🏆", 5)
-    roster.set("Warren 🏆", 6)
+    roster.set("Maxson 🏀", 2)
+    roster.set("Royce", 4)
+    roster.set("Warren", 5)
 }
 
 // Add the deets to the webpage
@@ -26,7 +26,7 @@ function print_roster(){
     let parent = document.getElementById("roster")
 
     for(let x of roster.keys()){
-        parent.appendChild(get_row(x))
+        parent.appendChild(get_row(x)) 
     }
 }
 
