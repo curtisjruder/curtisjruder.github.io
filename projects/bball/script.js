@@ -8,13 +8,13 @@ function set_roster(){
     roster.set("Aarav 🏀", 1)
     roster.set("Amari", 3)
     roster.set("Arthur", 3)
-    roster.set("Austin", 3)
+    roster.set("Austin", 4)
     roster.set("Finley 🏀", 1)
-    roster.set("Jack", 5)
+    roster.set("Jack", 6)
     roster.set("John 🏀", 2)
     roster.set("Maxson 🏀", 2)
-    roster.set("Royce", 4)
-    roster.set("Warren", 5)
+    roster.set("Royce", 5)
+    roster.set("Warren", 6)
 }
 
 // Add the deets to the webpage
