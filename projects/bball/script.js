@@ -5,16 +5,16 @@ set_roster()
 function set_roster(){ 
     roster.clear()  
     
-    roster.set("Aarav", 1)
-    roster.set("Amari (*)", 3)
-    roster.set("Arthur (*)", 2)
-    roster.set("Austin", 4)
-    roster.set("Finley", 2)
-    roster.set("Jack (*)", 6)
-    roster.set("John", 2)
-    roster.set("Maxson", 3)
-    roster.set("Royce (*)", 5)
-    roster.set("Warren", 6)
+    roster.set("Aarav 🏀", 1)
+    roster.set("Amari 🏆", 3)
+    roster.set("Arthur 🏆", 2)
+    roster.set("Austin 🏆", 4)
+    roster.set("Finley 🏀", 2)
+    roster.set("Jack 🏆", 6)
+    roster.set("John 🏀", 2)
+    roster.set("Maxson 🏀", 3)
+    roster.set("Royce 🏆", 5)
+    roster.set("Warren 🏆", 6)
 }
 
 // Add the deets to the webpage
@@ -175,6 +175,7 @@ function get_row(label){
 
     td1 = document.createElement("th")
     td1.textContent = label
+    td1.className = 'player'
 
     td2 = document.createElement("td")
     td2.classList.add('check')
