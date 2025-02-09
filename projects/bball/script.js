@@ -6,13 +6,13 @@ function set_roster(){
     roster.clear()  
     
     roster.set("Aarav", 1)
-    roster.set("Amari", 3)
+    roster.set("Amari", 4)
     roster.set("Arthur", 3)
     roster.set("Austin", 4)
-    roster.set("Finley 🏀", 1)
+    roster.set("Finley", 1)
     roster.set("Jack", 6)
-    roster.set("John", 2)
-    roster.set("Maxson 🏀", 2)
+    roster.set("John", 3)
+    roster.set("Maxson", 2)
     roster.set("Royce", 5)
     roster.set("Warren", 6)
 }
