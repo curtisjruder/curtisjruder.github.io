@@ -5,16 +5,16 @@ set_roster()
 function set_roster(){ 
     roster.clear()  
     
-    roster.set("Aarav", 1)
+    roster.set("Aarav", 2)
     roster.set("Amari", 4)
     roster.set("Arthur", 3)
     roster.set("Austin", 4)
     roster.set("Finley", 1)
-    roster.set("Jack", 6)
+    roster.set("Jack", 5)
     roster.set("John", 3)
     roster.set("Maxson", 2)
-    roster.set("Royce", 5)
-    roster.set("Warren", 6)
+    roster.set("Royce", 4)
+    roster.set("Warren", 5)
 }
 
 // Add the deets to the webpage
